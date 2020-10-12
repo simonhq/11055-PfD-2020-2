@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+    <link href="stylesheet.css" rel="stylesheet">
+    <head>
+        <title>Week 4 Exercises - PFD</title>
+    </head>
+    <body>
+        <h1>Pseudocode and Flowcharts</h1>
+        <p>For my algorithm I have decided to write up my process of getting ready for class and riding to university.</p>
+        <p>Please excuse my formatting, I'm only just learning my CSS.</p>
+        <p>First, a write up of this algorithm for the analog amongst us.</p>
+        <ul>
+            <li>Pack laptop and lunch into bag</li>
+            <li>Pickup keys from bowl</li>
+            <li>Walk downstairs</li>
+            <li>Pump tyres up on bike</li>
+            <li>Connect bag to bike</li>
+            <li>Unlock bike</li>
+            <li>Put on helmet</li>
+            <li>Get on bike</li>
+            <li>Ride bike to university, stop for any intersections and check for cars.</li>
+            <li>Lock bike to bike racks.</li>
+            <li>Take bag off bike</li>
+        </ul>
+        <br>
+        <h3>Some Pseudocode</h3>
+        <p>Now, here is that algorithm converted into some sort of pseudocode.</p>
+        <code>START
+            <br>
+            IF bag_packed == FALSE:            <br>
+                DO pack bag            <br>
+                bag_packed = TRUE            <br>
+            <br>
+            IF cyclist_keys == FALSE:            <br>
+                DO put keys into pocket            <br>
+            <br>
+            IF bicycle_locked == TRUE:            <br>
+                DO WHILE bicycle_locked == TRUE:            <br>
+                    Test cyclist_keys in bicycle_lock until bicycle_locked == FALSE            <br>
+            <br>
+            IF helmet_on_head == FALSE:            <br>
+                DO Put helmet on head            <br>
+                <br>
+            IF bag_on_bike == FALSE:            <br>
+                DO Add bag to bike            <br>
+                <br>
+            WHILE tyre_pressure < 80:            <br>
+                DO tyre_pressure += 1            <br>
+                <br>
+            WHILE at_destination == FALSE:            <br>
+                cycle_to_destination = TRUE            <br>
+                <br>
+            WHILE cycle_to_destination == TRUE:            <br>
+                DO Pedal for 10 seconds            <br>
+                DO check_for_intersection            <br>
+                IF check_for_intersection == TRUE:            <br>
+                    DO is_traffic            <br>
+                        WHILE is_traffic == TRUE:            <br>
+                            wait for 5 seconds            <br>
+                            DO is_traffic            <br>
+                DO at_destination            <br>
+                IF at_destination == TRUE:            <br>
+                    cycle_to_destination = FALSE            <br>
+                    <br>
+            DO Lock bicycle to bike rack            <br>
+                bicycle_locked = TRUE            <br>
+                <br>
+            DO remove helmet            <br>
+                helmet_on_head = FALSE            <br>
+                <br>
+            DO take bag off bike            <br>
+                bag_on_bike = FALSE            <br>
+                <br>
+            FINISH 
+        </code>
+        <h3>And finally my flowcharts</h3>
+        </p>
+        <img src ="images/Week 3 diagram 1.png" style="width:50%;height:50%"><img src = "images/Week 3 diagram.png"style="width:50%;height:50%">
+</body>
+</html>

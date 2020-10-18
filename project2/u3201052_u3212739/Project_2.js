@@ -8,7 +8,7 @@ function libraryRequest(){
         //url: "/orders/" + order_id,
         //AccessControlAllowOrigin: "https://openlibrary.org", 
         crossDomain: true,
-        url: "https://openlibrary.org/works/OL20388584W/Tales_from_Earthsea",
+        url: "https://openlibrary.org/works/isbn/" + isbnlist,
         // data: {
         //         order: {
         //                     status: newStatus,

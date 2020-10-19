@@ -16,7 +16,8 @@ function setup() {
 }
 
 function draw() {
-    var flA = new aFloor(100, 100, 4, 200, 2, false);
+    
+    var flA = new aFloor(100, 100, 5, 200, 3, false);
     flA.drawFloor();
     
 }

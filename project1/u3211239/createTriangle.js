@@ -4,9 +4,16 @@
     September 2020
 */
 
+<<<<<<< HEAD
+/*  This function creates an equilateral triangle based on only a centre position and a height value.
+    Normally you'd need to pass 3 points to the standard triangle function so that it could draw 3
+    lines between them. This function will generate those points itself (relative to the centre
+    point). It doesn't even use trigonometry ... which is nice for the CPU.
+=======
 /*  This function creates an equilateral triangle based on only a centre position and a height value. Normally you'd need to pass 3
     points to the standard triangle function so that it could draw 3 lines between them. This function will generate those points
     itself (relative to the centre point provided). It doesn't even use trigonometry ... which is nice for the CPU.
+>>>>>>> master
 */
 function createTriangle(x, y, height) {
 

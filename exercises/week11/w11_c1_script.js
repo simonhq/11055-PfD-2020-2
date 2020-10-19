@@ -30,6 +30,10 @@ class aWindow {
         this.y = y;
     }
 
+    getPosX(){
+        return this.x;
+    }
+
     setOptions(size, colour) {
         this.size = size;
         this.colour = colour;

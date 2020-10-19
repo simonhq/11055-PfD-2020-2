@@ -1,0 +1,116 @@
+START
+
+    function DrawPortrait
+    START
+        CALL drawCanvas 
+        CAll drawBackground 
+        CALL drawHead
+        CALL drawChin
+        CALL drawHair 
+        CALL drawEyes 
+        CALL drawMouth
+        CALL drawEar
+        CALL drawGlasses
+    END
+
+        //A1.1
+        START
+        function setup()
+            createCanvas(400, 600)
+            strokeWeight(8)
+
+        //A2.1
+        function draw()
+            background("blue")
+            LOOP
+        END
+
+        //A3.1
+        START
+        function drawHead
+        CALL fill(yellow)
+        rect(x, y, w, [h], [tl]);
+        END
+
+        //A3.2
+        function drawChin
+        START
+        CALL fill(yellow)
+        rect(x, y, w, [h], [tl]);
+        END
+
+        //A3.3
+        function drawHair
+        Call drawHairtop
+        Call drawHairbottom
+
+        START
+        function drawHairtop
+        curveVertex(x, y)
+        END
+
+        START
+        function drawHairbottom
+        curveVertex(x, y)
+        END
+
+        //A3.4
+        function drawEyes
+        CALL drawEyeballs
+        CALL drawPupils
+
+        function drawPupils
+        START
+        Call fill(black)
+        ellipse (x, y, w, [h])
+        ellipse (x, y, w, [h])
+        END
+    
+        function drawEyeballs
+        START
+        Call fill(black)
+        ellipse (x, y, w, [h])
+        ellipse (x, y, w, [h])
+        END
+
+        //A3.5
+        function drawMouth
+        START
+        Call fill(black)
+        line(x1, y1, x2, y2)
+        END
+
+        //A3.6
+        function drawEar
+        Call drawOuterEar
+        Call drawInnerEar
+
+        function drawOuterEar
+        START
+        curveVertex(x, y)
+        END
+
+        function drawInnerEar
+        START
+        curveVertex(x, y)
+        END
+
+        //A3.7
+        function drawGlasses
+        CALL drawLeftLens
+        CALL drawRightLens
+
+        function drawLeftLens
+        START
+        Call fill(black)
+        square(x, y, s)
+        rect(x, y, w, [h])
+
+        function drawRightLens
+        Call fill(black)
+        square(x, y, s)
+        rect(x, y, w, [h])
+        mouseMoved([event])
+    END
+END
+

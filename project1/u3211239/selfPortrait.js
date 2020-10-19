@@ -20,9 +20,16 @@ function setup() {
 // Turn off the stroke so that we don't see the circle outlines.
     noStroke();
 
+<<<<<<< HEAD
+/*  Create the slider controls. Three are for the colour channels, a fourth allows for adjustment of
+    the maximum circle diameter, a fifth slider controls the maximum triangle height, and the sixth
+    adjusts the frame rate (how many times the image is drawn each second).
+    Set the respective widths of each slider control and position them on the left side of the screen.
+=======
 /*  Create the slider controls. Three are for the colour channels, a fourth allows for adjustment of the maximum circle diameter, a
     fifth slider controls the maximum triangle height, and the sixth adjusts the frame rate (how many times the image is drawn each
     second). Set the respective widths of each slider control and position them on the left side of the screen.
+>>>>>>> master
 */
     redSlider = createSlider(0, 255, 63);
     redSlider.style('width', '140px');
@@ -52,8 +59,13 @@ function setup() {
     shapeSelector.selected('0');
 }
 
+<<<<<<< HEAD
+/*  This function is called if the browser window is resized or moved to another monitor (which is the scenario I
+    want to catch), in which event it redraws the canvas in keeping with the screen resolution.
+=======
 /*  This function is called if the browser window is resized or moved to another monitor (which is the scenario I want to catch),
     in which event it redraws the canvas in keeping with the screen resolution.
+>>>>>>> master
 */
 function windowResized() {
 
@@ -79,8 +91,14 @@ function draw() {
     fill(redSlider.value(), greenSlider.value(), blueSlider.value());
 
 /*  This loop reads the array that was dimensioned in "coordinates.js".
+<<<<<<< HEAD
+    It goes row by row and retrieves the x and y values before applying the getScaleFactor() multiplier,
+    in order to space them out proportionally. Finally, they're passed to the circle function to be
+    drawn on the canvas.
+=======
     It goes row by row and retrieves the x and y values before applying the getScaleFactor() multiplier, in order to space them out
     proportionally. Finally, they're passed to the circle or triangle function to be drawn on the canvas.
+>>>>>>> master
 */
      for (let row = 0; row < coordinates.length; row++) {
         x = (coordinates[row] [0]) * scaleFactor;
@@ -90,10 +108,19 @@ function draw() {
                 diameterSlider.hide();
                 heightSlider.show()
 
+<<<<<<< HEAD
+/*  The height of the triangles and the diameter of the circles are both random-ish.
+    Values from the respective slider controls are obtained and then fed into a random process as
+    maximum values. In both instances there's a hard-coded minimum value of 2.
+    Inside that limited range it chooses randomly ... well, as much as computers can.
+    The resulting variation in triangle height or circle diameter creates the interesting motion
+    effect.
+=======
 /*  The height of the triangles and the diameter of the circles are both random-ish. Values from the respective slider controls are
     obtained and then fed into a random process as maximum values. In both instances there's a hard-coded minimum value of 2.
     Within that limited range it chooses randomly ... well, as much as computers can. The resulting variation in triangle height or
     circle diameter creates the interesting motion effect.
+>>>>>>> master
 */
                 height = Math.floor(Math.random() * heightSlider.value()) + 2;
                 createTriangle(x, y, height);

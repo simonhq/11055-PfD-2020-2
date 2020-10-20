@@ -1,30 +1,33 @@
+/*
 
-$(document).ready(libraryRequest());
+Author: Zanya Nadelle Bendebel & Claire McAuliffe
+Date Created: 14/10/2020
+*/
+function displayBooks(){
+    var myBooks = document.getElementsByClassName("header");
+    myBooks[0].innerHTML = "<h1>This is a Test!</h1>";
+    console.log(myBooks);
+}
 
-// This function is called when a status update is requested.
-function libraryRequest(){    
-    $.ajax({
-        type: 'GET',
-        //url: "/orders/" + order_id,
-        //AccessControlAllowOrigin: "https://openlibrary.org", 
-        crossDomain: true,
-        url: "https://openlibrary.org/works/isbn/" + isbnlist,
-        // data: {
-        //         order: {
-        //                     status: newStatus,
-        //                 },
-        //         id: order_id,
-        //         },
-        dataType: 'json',
-        success: function(data){
-            console.log("Request fulfilled");
-            var parsedJSON =jQuery.parseJSON(data);
-            alert(parsedJSON);
-            console.log(data)
-        },
-        error: function(){
-            console.log("Failed to fulfill request!!!");
-            alert("Failed to fulfill request!!!");
-        }
-    });
+
+
+
+
+
+
+
+
+
+
+pageQuantity = isbnlist.length;
+
+
+fetchDetails()
+
+async function fetchDetails(){
+    url = "https://openlibrary.org/api/books?bibkeys=ISBN:"+ isbnlist +"&format=json&jscmd=data";
+    const resp = await fetch(url);
+    const jres = await resp.json();
+    console.log(jres);
+    displayBooks();
 }

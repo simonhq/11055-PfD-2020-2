@@ -6,9 +6,17 @@
 
 /*  Examine the screen resolution and determine an appropriate scale factor.
 
+<<<<<<< HEAD
+    This is necessary because on small, high pixel density screens like those found on laptops, newer
+    versions of Windows apply scaling by default which has the unfortunate effect of making the
+    drawing canvas run off the screen.
+    Using the value returned by this function it's possible compensate for this and also cater for a 
+    large range of screen resolutions.
+=======
     This is necessary because on small, high pixel density screens like those found on laptops, newer versions of Windows apply
     scaling by default which has the unfortunate effect of making the drawing canvas run off the screen. Using the value returned
     by this function it's possible compensate for this and also cater for a large range of screen resolutions.
+>>>>>>> master
 */
 function getScaleFactor () {
 

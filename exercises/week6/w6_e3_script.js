@@ -16,6 +16,17 @@ function product(number1, number2){
 }
 
 // you can use functions in functions, with the one inside being done before the one outside
+<<<<<<< HEAD
+printme(product(3,4));
+
+
+
+
+
+/* create a function that will take an array and will print that array using the for loop we used before */
+
+
+=======
 
 var student_names = ["Simon", "Billybob"];
 var student_names2 = ["Kate", "Keir", "Manish", "Moudar", "Seth", "Shane"];
@@ -37,5 +48,6 @@ function printerarray(arraytoprint) {
     }
 
 }
+>>>>>>> master
 
 

@@ -1,0 +1,96 @@
+Project 1 - Pseudocode
+
+
+
+CREATE canvasWidth, canvasHeight
+SET canvasWidth = 800
+SET canvasHeight = 800
+
+
+START
+    CREATE Canvas : Variables (canvasWidth and canvasHeight)
+END
+
+
+START
+    CALL Background
+    CALL Portrait
+END
+
+
+FUNCTION Background
+START
+    CREATE rValue, gValue
+    SET rValue = Calculation using MouseX and canvasWidth
+    SET gValue = Calculation using MouseY and canvasHeight
+    DRAW Background using rValue and gValue
+END
+
+
+FUNCTION Portrait
+START
+    CALL drawBody
+    CALL drawFace
+    CALL drawTshirt
+    CALL drawJacket
+    CALL drawHair
+    CALL drawEyes
+    CALL drawNose
+    CALL drawMouth
+END
+
+FUNCTION drawBody
+START
+    USE Vertices to draw body shape
+END
+
+FUNCTION drawFace
+START
+    USE Vertices to draw face
+END
+
+FUNCTION drawTshirt
+START
+    USE vertices to draw tshirt
+END
+
+FUNCTION drawJacket
+START
+    USE vertices to draw left shoulder
+    USE vertices to draw right shoulder
+    USE vertices to draw left collar
+    USE vertices to draw right collar
+END
+
+FUNCTION drawHair
+START
+    USE vertices to draw hair
+END
+
+FUNCTION drawEyes
+START
+    DRAW ellipse for left eye
+    DRAW eppipse for right eye
+
+    CALL drawEye for left eye
+    CALL drawEye for right eye
+END
+
+FUNCTION drawEye
+START
+    DRAW Circle for Iris
+    DRAW Circle for Pupil
+END
+
+FUNCTION drawNose
+START
+    USE vertices to draw nose
+END
+
+FUNCTION drawMouth
+START
+    USE vertices to draw Mouth
+    DRAW arc to draw shadow below mouth
+END
+
+

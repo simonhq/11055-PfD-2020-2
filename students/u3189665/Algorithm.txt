@@ -1,0 +1,23 @@
+public class directions{
+    public HomeToUni()
+    {
+        LeaveHome;
+        do
+        {
+            walkDownThynneSt();
+        } while (!atHaydonDrive())
+        do
+        {
+            if (roadIsClear()) cross();
+        } while (atHaydonDrive())
+        do
+        {
+            walkDownDirtPath();
+        }while (!atRoundabout())
+        do
+        {
+            if (roadIsClear()) cross();
+        }while (atRoundabout())
+        walkUpPath()
+    }
+}

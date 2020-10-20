@@ -1,0 +1,11 @@
+Lecture Activity
+
+function mytestable (word, numA, numB) {
+    var product = numA/numB;
+    if (word.length < 74) {
+        return product + "is the" + word;
+    }else{
+        return "that's a long word";
+    }
+    product++;
+}

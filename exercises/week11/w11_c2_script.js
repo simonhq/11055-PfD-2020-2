@@ -56,7 +56,7 @@ class aFloor{
     x = position from the left
     y = position from the top
     size = the size of the window 1 = 100 pixel x 50 pixel floor
-    colour = either a string name or a number from 0-255 for grey scale
+    colour = number from 0-255 for grey scale
     windows = the number of windows on this floor
     ground = true or false;
     relxsize = 100

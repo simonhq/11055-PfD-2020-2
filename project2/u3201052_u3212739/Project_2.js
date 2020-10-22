@@ -4,20 +4,25 @@ Author: Zanya Nadelle Bendebel & Claire McAuliffe
 Date Created: 14/10/2020
 */
 var isbnLength;
-
-// var pageNum = 0
-
-
 var pageNum = 0;
-// function changePage(){
+
+
+// var nameValue = document.getElementById("addISBN").value;
+// console.log(nameValue);
+
+
+// document.getElementById('pushMe').onclick = function changePage(){
 //     pageNum ++;
 //     console.log(pageNum);
 // }
+
+
 // (document).ready(function() {
 //     ('.buttonChange').on('click', function() {
 //         pageNum ++;
 //     });
 // });
+
 
 // pageQty = isbnlist.length;
 // console.log(pageQty)

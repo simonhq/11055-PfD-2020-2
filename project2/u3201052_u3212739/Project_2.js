@@ -9,11 +9,15 @@ var isbnLength;
 
 
 var pageNum = 0;
-function changePage(){
-    pageNum ++;
-    console.log(pageNum);
-}
-
+// function changePage(){
+//     pageNum ++;
+//     console.log(pageNum);
+// }
+// (document).ready(function() {
+//     ('.buttonChange').on('click', function() {
+//         pageNum ++;
+//     });
+// });
 
 // pageQty = isbnlist.length;
 // console.log(pageQty)

@@ -40,7 +40,7 @@ nav a{
     font-family: Arial, Helvetica, sans-serif;
     letter-spacing: 4px;
     font-size: 15px;
-    margin: 10 px;
+    margin: 0 10px;
     text-transform: uppercase;
     color: white;
 }
@@ -48,7 +48,7 @@ nav a{
     width: 100%;
     height: 500px;
     position: fixed;
-    top: 100px;
+    top: 80px;
     background-image: url(sitebackground.jpg.jpg);
     -webkit-backround-size: cover;
     background-size: cover;
@@ -65,13 +65,13 @@ nav a{
 .content-area{
     width: 100%;
     position: relative;
-    top: 420px;
+    top: 300px;
     background: rgb(44, 46, 46);
-    height: 1500px;
+    height: 500px;
 }
 
-body {
-    text-align: left;
+.body {
+    text-align: center;
     background-color: rgb(17, 18, 18);
     font-family: Arial, Helvetica, sans-serif;  
     border-top: 3px solid;
@@ -107,17 +107,15 @@ button {
     text-transform: uppercase;
     text-decoration: none;
     letter-spacing: 4px;
-    outline: none;
-    background-color: yellow;
+    outline: rgb(255,255,255);
+    background-color: rgb(255, 217, 0);
+    border-radius: 8px;
+    transition-duration: 0.3s;
+    
 }
 
 /*Button changes color when you hover over it*/
-button: hover {
-    transtion: 0.3s;
-    background-color: #2e1263;
-    color: #F69680;
-}
-
-p {
-    font size: 20px;
+button:hover {
+    background-color: rgb(255, 255, 255);
+    outline:rgb(255,217,0)
 }

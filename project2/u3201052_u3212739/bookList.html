@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+
+<!--
+This is a HTML page which will use javascript to bring up information on books using ISBNs.
+Author: Zanya Nadelle Bendebel & Claire McAuliffe
+Date Created: 14/10/2020
+-->
+
+<!-- Individual book site -->
+
+<html>
+    <head>
+        <title>Find a Book</title>
+        <link rel="stylesheet" type="text/css" href="style.css">
+        <script src = "../isbn.js"></script>
+        <script src = "Project_2.js"></script>
+    </head>
+    <body>
+        <div class="box-area">
+            <header>
+                <!-- This is the navigation bar -->
+                <div class="wrapper">
+                    <div class="logo">
+                        <!-- Put logo of website here -->
+                        <a href="#">Find a Book</a> 
+                    </div>
+                    <nav>
+                        <a href="./index.html">Home</a>
+                        <a href="./about.html">About</a>
+                        <a href="./bookList.html">Book List</a>
+                    </nav>
+                </div> 
+            </header>
+            <div class="banner-area">
+                <h2>Find a Book</h2>
+            </div>
+            <div class="content-area">
+                <div class="wrapper">
+                    <div class="bookCover">
+                    </div>     
+            
+                    <div class="bookTitle">
+                        <h1>Title</h1>
+                    </div>
+            
+                    <div class="bookSubtitle">
+                        <p>Subtitle</p>
+                    </div>
+            
+                    <div class="bookAuthor">
+                        <p>Author</p>
+                    </div>
+            
+                    <div class="bookPublisher">
+                        <p>Publisher</p>
+                    </div>
+            
+                    <div class="bookPublishDate">
+                        <p>Date</p>
+                    </div>
+                    <button type="button" onclick="pagNum++" id="pushMe">Next Page</button>
+                </div>
+            </div>
+        </div>
+    </body>
+</html> 

@@ -17,6 +17,7 @@ page, calls the function that gets the data from the databse and calls the funct
 of isbn numbers into the format used to access the json object sent back from the database. */
 window.onload = onLoad;   
 function onLoad(){
+    window.scrollTo(0, 0);
     expandISBN();
     if (document.getElementById("bookListTitle")){                  // This function only loads if it is on the page that needs these buttons
         document.getElementById('nextButton').onclick = function changePage(){
@@ -32,10 +33,16 @@ function onLoad(){
         document.getElementById('deleteButton').onclick = function deleteISBN(){
             isbnlist.splice(pageNum,1);                             // This button deletes an entry from the isbnlist array
             isbnListKey.splice(pageNum,1);
+            pageQty = isbnlist.length;
             displayBook();
             window.scrollTo(0, 0);
         }
         document.getElementById('homeButton').onclick = function changePage(){
+            pageNum = 0;                                            // This button returns to the first page
+            displayBook();  
+            window.scrollTo(0, 0);
+        }
+        document.getElementsByClassName('homeButton').onclick = function changePage(){
             pageNum = 0;                                            // This button returns to the first page
             displayBook();  
             window.scrollTo(0, 0);
@@ -50,7 +57,7 @@ function onLoad(){
 inputted to go and get information about those books from the OpenLibraries API and then calls the function
 which displays those books on the webpage. */
 async function fetchDetails(){
-    var bookURL = "https://openlibrary.org/api/books?bibkeys=ISBN:"+ isbnlist +"&format=json&jscmd=data";   //creates a URL that is based on the ISBNs provided
+    var bookURL = "https://openlibrary.org/api/books?bibkeys="+ isbnlist +"&format=json&jscmd=data";   //creates a URL that is based on the ISBNs provided
     const respBook = await fetch(bookURL);                          // Uses that URL to get the information from OpenLibraries and waits till that is done
     jresBook = await respBook.json();                               // Converts the information from Openlibraires into a json object for ease of use
     console.log(jresBook)
@@ -66,15 +73,10 @@ async function fetchDetails(){
 
 }
 
-/* This function will go through each ISBN in the array and add 'ISBN:' to the front of any 10 digit ISBN's
-so that they match the name sent back in the json object. */
+/* This function will put the numbers from the ISBN string into an array. */
 function expandISBN(){
     for (i = 0; i < isbnlist.length; i++) {                     // For all provided ISBN numbers
-        if (isbnlist[i].toString().length === 10) {             // Check if ISBN number is 10 digits
-            isbnListKey[i] = "ISBN:" + isbnlist[i];             // If it is, add 'ISBN:'
-        } else {
-            isbnListKey[i] = isbnlist[i];                       // If not, stay the same
-        }
+            isbnListKey[i] = isbnlist[i];                       
     }
 }
 
@@ -100,7 +102,6 @@ function hideElement(elementName){                                              
     hideElement[0].style.display = "none";
 }
 
-// jresBook[isbnListKey[pageNum]] === isbnlist[pageNum]
 
 
 /* This function will display a book cover, title, author, publisher and publishing date of whichever book
@@ -152,5 +153,3 @@ function displayBook(){
     }
 }
 
-
-// MULTIPLE AUTHORS CHECK

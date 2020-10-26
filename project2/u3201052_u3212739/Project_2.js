@@ -8,6 +8,7 @@ Date Created: 14/10/2020
 var isbnLength;
 var pageNum = 0;
 var jresBook;
+var jresMovie = [];
 var isbnListKey = [];
 var pageQty = isbnlist.length;
 
@@ -47,7 +48,7 @@ function onLoad(){
             displayBook();  
             window.scrollTo(0, 0);
         }
-        fetchDetails();                                             // Runs the function that retrieves the necissary information from the database
+        fetchDetails();                                             // Runs the function that retrieves the necessary information from the database
     }
 }
 
@@ -62,15 +63,16 @@ async function fetchDetails(){
     jresBook = await respBook.json();                               // Converts the information from Openlibraires into a json object for ease of use
     console.log(jresBook)
 
-    // for (i = 0; i < pageQty; i++) {
-    //     movieURL = "https://api.themoviedb.org/3/search/movie?api_key=58ab3248432c80d6ffd196da87c220a3&query=" + jresBook[isbnListKey[i]].title
-    //     const respMovie = await fetch(movieURL);
-    //     const jresMovie = await respMovie.json();
-    //     console.log(jresMovie)
-    // }
-    displayBook();                                                  // Displays the book information on the webpage
-    
+    for (i = 0; i < (pageQty); i++) {
+        if (!(jresBook[isbnListKey[i]] === undefined)) {
+            movieURL = "https://api.themoviedb.org/3/search/movie?api_key=58ab3248432c80d6ffd196da87c220a3&query=" + jresBook[isbnListKey[i]].title;
+            const respMovie = await fetch(movieURL);
+            jresMovie[i] = await respMovie.json();
+            console.log(jresMovie[i])
+        }
+    }
 
+    displayBook();                                                  // Displays the book information on the webpage
 }
 
 /* This function will put the numbers from the ISBN string into an array. */
@@ -97,6 +99,28 @@ function displayBookCover(){
     displayAttribute[0].style.display = "block";                                                        // Makes that element visible
     displayAttribute[0].innerHTML = imgURL;                                                             // Changes the image to correspond to the value for that book from the database
 }
+function displayMovieAttribute(className, classVariable, textType = "p"){    
+    if (!(classVariable === undefined)){
+        let displayAttribute = document.getElementsByClassName(className);                                  // Finds the element on the HTML page
+        displayAttribute[0].style.display = "block";                                                        // Makes that element visible
+        displayAttribute[0].innerHTML = "<" + textType + ">" + classVariable + "</" + textType + ">";       // Changes the text in that element to display the corresponding value for that book from the database, using the element type wanted
+    } else {
+        displayAttribute[0].style.display = "none";    
+    }
+}
+function displayMovieCover(){
+    let displayAttribute = document.getElementsByClassName("movieCover");                                // Finds the element on the HTML page
+    if (!(jresMovie[pageNum].results[0].poster_path === null)) {
+        let imgURL = "<img src= https://image.tmdb.org/t/p/w200" + jresMovie[pageNum].results[0].poster_path + ">";                        // Creates an image URL with the ISBN numbers
+        let displayAttribute = document.getElementsByClassName("movieCover");                                // Finds the element on the HTML page
+        displayAttribute[0].style.display = "block";                                                        // Makes that element visible
+        displayAttribute[0].innerHTML = imgURL;                                                             // Changes the image to correspond to the value for that book from the database
+    } else if (!(jresMovie[pageNum].results[0].title === undefined)){
+        displayAttribute[0].innerHTML = "<img src = ./noimageavailable.jpeg width = 200 >";    
+    } else {
+        displayAttribute[0].style.display = "none";
+    }
+}
 function hideElement(elementName){                                                                        // Finds the element on the HTML page
     let hideElement = document.getElementsByClassName(elementName);                                       // Makes that element disappear
     hideElement[0].style.display = "none";
@@ -110,12 +134,30 @@ index number). On the last page there is a button to go back to the start and if
 there is a button to delete it from the list. 
 Note: The deletion of the invaild ISBN is not permanent and can be retrived by reloading the page. */
 function displayBook(){
-    if(pageQty <= pageNum){                                         // When the page number is higher than the number of books
+    if (pageQty === 0) {
+        hideElement("bookCover");
+        displayBookAttribute("bookTitle", "No books in your list. Please check your ISBN file and try again.", "h1");
+        hideElement("bookAuthor");
+        hideElement("bookPublisher");                               // Clears the book information
+        hideElement("bookPublishDate");                             // Shows the back and home buttons only
+        hideElement("movieTitle");
+        hideElement("movieCover");
+        hideElement("movieRating");
+        hideElement("movie");
+        hideElement("nextButton");
+        hideElement("deleteButton");
+        hideElement("backButton");
+        hideElement("homeButton");
+    } else if(pageQty <= pageNum){                                         // When the page number is higher than the number of books
         hideElement("bookCover");
         displayBookAttribute("bookTitle", "No more books in your list.", "h1");
         hideElement("bookAuthor");
         hideElement("bookPublisher");                               // Clears the book information
         hideElement("bookPublishDate");                             // Shows the back and home buttons only
+        hideElement("movieTitle");
+        hideElement("movieCover");
+        hideElement("movieRating");
+        hideElement("movie");
         hideElement("nextButton");
         hideElement("deleteButton");
         displayButton("backButton");
@@ -126,6 +168,10 @@ function displayBook(){
         hideElement("bookAuthor");
         hideElement("bookPublisher");                               // Clears the book information, displays error message
         hideElement("bookPublishDate");                             // Shows the back, next and delete buttons
+        hideElement("movieTitle");
+        hideElement("movieCover");
+        hideElement("movieRating");
+        hideElement("movie");
         displayButton("nextButton");
         displayButton("deleteButton");
         displayButton("backButton");
@@ -136,6 +182,10 @@ function displayBook(){
         displayBookAttribute("bookAuthor", jresBook[isbnListKey[pageNum]].authors[0].name);
         displayBookAttribute("bookPublisher", jresBook[isbnListKey[pageNum]].publishers[0].name);
         displayBookAttribute("bookPublishDate", jresBook[isbnListKey[pageNum]].publish_date);
+        displayMovieAttribute("movieTitle", jresMovie[pageNum].results[0].title);
+        displayMovieCover();
+        displayMovieAttribute("movieRating", (jresMovie[pageNum].results[0].vote_average + "/10"));
+        displayMovieAttribute("movie", "Related Movie", "h2");
         displayButton("nextButton");                                // Fills the page with information on the book related to that page number
         hideElement("deleteButton");                                // Shows the next button
         hideElement("backButton");
@@ -146,6 +196,10 @@ function displayBook(){
         displayBookAttribute("bookAuthor", jresBook[isbnListKey[pageNum]].authors[0].name);
         displayBookAttribute("bookPublisher", jresBook[isbnListKey[pageNum]].publishers[0].name);
         displayBookAttribute("bookPublishDate", jresBook[isbnListKey[pageNum]].publish_date);
+        displayMovieAttribute("movieTitle", jresMovie[pageNum].results[0].title);
+        displayMovieCover();
+        displayMovieAttribute("movieRating", (jresMovie[pageNum].results[0].vote_average + "/10"));
+        displayMovieAttribute("movie", "Related Movie", "h2");
         displayButton("nextButton");                                // Fills the page with information on the book related to that page number
         hideElement("deleteButton")                                 // Shows the next and back buttons
         displayButton("backButton");

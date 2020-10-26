@@ -1,0 +1,92 @@
+
+
+When Window is first loaded
+    
+    CREATE Navigation Bar 
+        IF 'About' is pressed {
+            CHANGE site to 'About'
+        } 
+        ELSE IF 'Homepage' is pressed {
+            CHANGE site to 'Homepage'
+        }
+    }
+    IF site is on 'Homepage' {
+        RUN fetchDetails
+
+        DISPLAY title "Book List"
+        CREATE content area for 'bookData' and 'movieData'
+
+        CREATE nextButton
+        IF nextButton is pressed {
+            CHANGE currentPage by +1
+            RUN displayBook
+        }
+        CREATE backButton
+        IF backButton is pressed {
+            CHANGE currentPage by -1
+            RUN displayBook
+        }
+        CREATE homeButton
+        IF homeButton is pressed {
+            CHANGE currentPage to first page
+            RUN displayBook
+        }
+        CREATE deleteButton
+        IF deleteButton is pressed {
+            REMOVE currentPage from list
+            RUN displayBook
+        }
+    } ELSE IF site is on 'About' {
+        DISPLAY title "About"
+        DISPLAY "This site was designed by... The data from this site is from.."
+    }
+    DO
+        IF 'About' is pressed {
+            CHANGE site to 'About'
+        } 
+        ELSE IF 'Homepage' is pressed {
+            CHANGE site to 'Homepage'
+        }
+    LOOP
+}
+
+ASYNC FUNCTION fetchDetails {
+    REQUEST book data for each ISBN in ISBNList
+    WAIT till response recieved
+    STORE Data in an object called 'bookData'
+
+    REQUEST movie data for each Book in ISBNList the titles from bookData
+    WAIT till response recieved
+    STORE Data in an object called 'movieData'
+
+    RUN displayBook
+}
+
+
+
+FUNCTION displayBook {
+    IF the currentPage number is > the number of ISBNs {
+        DISPLAY "No more books in your list."
+        DISPLAY nextButton
+        DISPLAY homeButton
+        } 
+    ELSE IF currentPage's ISBN is invaild {
+        DISPLAY "This book is not available. Please check the ISBN and try again."
+        DISPLAY backButton
+        DISPLAY nextButton
+        DISPLAY deleteButton
+    } 
+    ELSE IF currentPage is page 1 {
+        DISPLAY currentPage's bookData
+        DISPLAY currentPage's movieData
+        DISPLAY nextButton
+    } 
+    ELSE {
+        DISPLAY currentPage's bookData
+        DISPLAY currentPage's movieData
+        DISPLAY backButton
+        DISPLAY nextButton
+    }
+}
+
+

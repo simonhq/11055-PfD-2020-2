@@ -8,13 +8,20 @@
             background-color: #ebffb0;
             padding: 20px 10px;
         }
-            div.a {
-                text-indent: 50px;
-                }
-           
+            
+        #coverimg{
+            
+        text-align: center;
+        }
+        #bookinfo{
+            text-align: center;
+        }
+      h3{
+        margin-bottom: -20px;
+      }
         
     </style>
-    <script src="Scripts/"></script>        
+    <script src="Scripts/JsClasses.js"></script>        
     <script src="Scripts/Search.js"></script>
     </head>
     <body>
@@ -24,13 +31,18 @@
         <div class = "header">
             <h1>Project 2</h1>
         </div>
-        <button type ="button" id="button1" onclick="main();">Display books</button>
+        <button type ="button" id="button1" onclick="main()">Display books</button>
         
         <input type="text" name="searchbar" id="searchbar" placeholder="Search for Isbn"/>
         <button type="button" id="searchbutton"  onclick="addisbn()">Search</button>
         
-        <p id="bookinfo" name="bookinfo">Bookinfo</p>
-        
-        <div id="bookinfo"></div>
+      
+        <div id="coverimg">
+
+        </div>
+
+        <div id="bookinfo">
+            
+        </div>
     </body>
 </html>

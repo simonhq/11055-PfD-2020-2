@@ -6,24 +6,26 @@ async function main() {
     // this is the list of isbn numbers we want information for
   
     // this is the list of books we are going to create
-    var bookarr = []
+    var bookarr = [];
    
 
     // the normal for loop we have looked at so far
- 
-    let book = new bookDetail(isbnarr[0], "M");
-        await book.getDetail();
-        bookarr.push(book);
-   
 
-    // the for (variable of iterable) will loop through each item in an array
-    for (x of bookarr) {
-        document.write(x.cover());
-        document.write("<br>"+"<h3>"+x.gettitle() +"<br> "+ x.getsubtitle() + "</h3>")
-        document.write("<p>Author: " +x.getAuthor());
-        document.write("<br>"+ x.getpublisher());
-        document.write("<br>"+ x.getsubject() + "</p>"+ "<br>");
-    }
+    let book = new bookDetail(isbnarr[0], "M");
+    await book.getDetail();
+    bookarr.push(book);
+
+
+// the for (variable of iterable) will loop through each item in an array
+for (x of bookarr) {
+    document.getElementById("coverimg").innerHTML = x.cover();
+    document.getElementById("bookinfo").innerHTML = 
+        "<br>"+"<h3>"+x.gettitle() +"<br> "+ x.getsubtitle() + "</h3>" + "<br>"+
+        "<p>Author: " +x.getAuthor() +
+        "<br>"+ x.getpublisher() +
+        "<br>"+ x.getsubject() + "</p>"+ "<br>";
+    
+}
 
    
 }
@@ -36,7 +38,7 @@ function addisbn(){
    {
        return alert("Your Number is lest than 10 or 13");
    } 
-   //if the value is 13 or 10, the ISbN is added to the array list and ready display
+   //if the value is 13 or 10, the ISbN is added to the array list and ready
    if (ISBNsearch.value.length == 13 || ISBNsearch.value.length ==10 )
    {
     isbnarr.push(ISBNsearch.value);

@@ -1,0 +1,290 @@
+html{
+    color: #F3E8EE;
+    box-sizing: border-box;
+}
+body{
+    background-color: #454B66;
+}
+
+h4{
+    font-weight: 400;
+}
+
+p{
+    line-height: 16px;
+    line-height: 1rem;
+}
+.background{
+    background-image: url(../images/Background_library.jpeg), linear-gradient(90deg, rgba(246,174,45,1) 0%, rgba(246,174,45,0) 100%);
+    background-position: center;
+    background-size: cover;
+    position: absolute;
+    width: 100%;
+    z-index: -1;
+
+}
+.content:after {
+    position: absolute;
+    content:"";
+    height:100%;
+    width:100%;
+    top:0;
+    left:0;
+    background: rgba(69,75,102,0);
+    background: linear-gradient(180deg, rgba(69,75,102,0) 0%, rgba(69,75,102,1) 100%);
+    z-index: -1;
+}
+
+.line{
+    width: calc(100% - 2rem);
+    border-bottom: 2px solid #454B66;
+    margin: 0 auto;
+}
+
+.break{
+    height: 16px;
+    height: 1rem;
+    width: auto;
+}
+
+.hero{
+    background-color: #F6AE2D;
+    background: -webkit-linear-gradient(left, rgba(246,174,45,1) 0%, rgba(246,174,45,0) 100%);
+    background: linear-gradient(90deg, rgba(246,174,45,1) 0%, rgba(246,174,45,0) 100%);
+}
+
+.hero h1, .hero h4{
+    padding: 0 32px;
+    padding: 0 2rem;
+}
+.navbar{
+    background-color: #F3E8EE;
+    background: -webkit-linear-gradient(right, rgba(246,174,45,1) 0%, rgba(246,174,45,0) 100%);
+    background: linear-gradient(270deg, rgba(246,174,45,1) 0%, rgba(246,174,45,0) 100%);
+    padding: 16px 32px;
+    padding: 1rem 2rem;
+} 
+
+.content{
+    width: auto;
+    padding: 16px 32px;
+    padding: 1rem 2rem;
+    background: rgb(103,125,183);
+    background: -webkit-linear-gradient(left, rgba(103,125,183,0.3) 0%, rgba(103,125,183,1) 50%, rgba(103,125,183,0.3) 100%);
+    background: linear-gradient(90deg, rgba(103,125,183,0.3) 0%, rgba(103,125,183,1) 50%, rgba(103,125,183,0.3) 100%);
+    margin-bottom: 80px;
+    margin-bottom: 5rem;
+}
+.input-group{
+    width: 100%;
+}
+
+.accordion .accordion-header{
+    margin: 0 0 16px 16px;
+    margin: 0 0 1rem 1rem;
+    padding: 8px;
+    padding: .5rem;
+    background-color: #F6AE2D;
+    border-radius: 4px;
+    width: -webkit-fit-content;
+    width: -moz-fit-content;
+    width: fit-content;
+}
+.accordion .accordion-header:hover{
+    color: #677DB7;
+}
+
+
+.accordion .accordion-body{
+    margin-bottom: 0;
+}
+
+/* book card info */
+.chip{
+    font-weight: 400;
+}
+.lightContent{
+    font-weight: 400;
+}
+
+.bookCard{
+    display:-webkit-box;
+    display:-ms-flexbox;
+    display:flex ;
+    background-color: rgba(243,232,238,0.8);
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+    border-radius: 4px;
+    -webkit-box-shadow: 2px 8px 4px 0px rgba(52,57,77,0.5);
+    -moz-box-shadow: 2px 8px 4px 0px rgba(52,57,77,0.5);
+    box-shadow: 2px 8px 4px 0px rgba(52,57,77,0.5);
+}
+
+.bookCard-Cover{
+    width: 180px;
+    height: 260px;
+    -o-object-fit: cover;
+       object-fit: cover;
+    border-radius: 4px 0 0 0;
+}
+
+.bookCard-Content{
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    max-width: calc(100% - 180px);
+    flex-grow: 1;
+    padding: 16px;
+    padding: 1rem;
+    color: #F3E8EE;
+    background-color: #454B66;
+    border-radius: 0 4px 0 0;
+}
+
+.bookCard-details{
+    width: 100%;
+}
+
+.bookCard-details .accordion{
+    padding: 16px 0 0 0;
+    padding: 1rem 0 0 0;
+}
+
+.bookCard-detailsContents{
+    padding: 16px;
+    padding: 1rem;
+}
+
+.bookCard-loading{
+    min-width: 100%;
+    /* margin: 2rem; */
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -ms-grid-column-align: center;
+        justify-items: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+}
+.bookCard-loading h4{
+    width: -webkit-fit-content;
+    width: -moz-fit-content;
+    width: fit-content;
+    padding: 16px 0 0 0;
+    padding: 1rem 0 0 0;
+    margin: 0;
+}
+.movieInfo{
+    background-color: #454B66;
+    color: #F3E8EE;
+    border-radius: 0 0 4px 4px;
+}
+.movieCard{
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
+    padding: 16px;
+    padding: 1rem;
+    cursor: pointer;
+    color: #F3E8EE;
+}
+.movieCard:hover{
+    text-decoration: none;
+    color: #F6AE2D;
+}
+.movieCard-content:visited{
+    text-decoration: none;
+    color: #F3E8EE;
+}
+a:focus{
+    text-decoration: none;
+    color: #F3E8EE;
+}
+.movieCard-content{
+    padding: 16px;
+    padding: 1rem;
+}
+.accordion input:checked~.accordion-body, .accordion[open] .accordion-body {
+    max-height: fit-content;
+}
+.movieInfo img{
+    width: 180px;
+    height: 260px;
+}
+.movieLine{
+    border-bottom: 2px solid #F3E8EE;
+    width: calc(100% - 2rem);
+    margin: 0 auto;
+}
+.movieHeading{
+    padding: 16px 0 0 0;
+    padding: 1rem 0 0 0;
+    margin: 16px;
+    margin: 1rem;
+}
+label .accordion-header{
+    padding: 16px;
+    padding: 1rem;
+}
+/* Detail Styling */
+.blunt{
+    border-radius: 4px;
+}
+.accent{
+    opacity: 0.8;
+    -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=80)";
+    letter-spacing: 1.6px;
+    letter-spacing: 0.1rem;
+    font-weight: 600;
+}
+.chip{
+    background-color: #F6AE2D;
+    font-size: 12.8px;
+    font-size: .8rem;
+    color: #454B66;
+}
+.chip:hover{
+    text-decoration: none;
+    color: #677DB7;
+}
+.noBook{
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    min-width: 100%;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+}
+.honey{
+    color: #F6AE2D;
+}
+.lavender{
+    color: #F3E8EE;
+}
+.dark{
+    color: #454B66;
+}
+.light{
+    color: #677DB7;
+}

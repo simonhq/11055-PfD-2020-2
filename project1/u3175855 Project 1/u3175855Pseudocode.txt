@@ -1,0 +1,127 @@
+// Create variables that will determine the colour of the background dots
+create variables: r, g, b
+
+create variable: spot {
+    set x to 50,
+    set y to 50,
+    set size to 20
+}
+
+// Creates the Canvas, sets framerate to 3 and generates a random background colour
+START setup() function {
+    createCanvas height 400 width 400
+    set frameRate to 3
+    make background random colour
+}
+
+START draw() function {
+   // code mouse circle
+    fill circle with (255, 192, 203, 70)
+    remove Stroke
+    draw circle at mouseX and mouseY with size 30
+
+    //Code dots
+    make spot.x a random value between 0 and width
+    make spot.y a random value between 0 and 350
+    make spot.size a random value between 5 and 30
+    make col.r a random value within the colour parameters
+    make col.g a random value within the colour parameters
+    make col.b a random value within the colour parameters
+    fill dot with col.r, col.g and col.b 
+    remove Stroke
+    draw circle at spot.x, spot.y with spot.size
+
+    //Variables which determine colour of shapes
+    variable: mouth = colour black
+    variable: head = colour skin 
+    variable: neck = colour skin
+    variable: shadow = colour skin (tinted)
+    variable: hair = colour dark brown
+    variable: shirt = colour random
+    variable: black = black
+    variable: eye = white
+
+    // Drawing the length of the neck
+    remove Stroke
+    fill colour with neck variable
+    draw rectangle (165, 200, 70, 100)
+
+    // Drawing shirt
+    fill colour with shirt variable
+    draw rectangle (115, 275, 170, 130)
+
+    //Drawing shirt shoulders
+    fill colour with shirt variable
+    draw ellipse (120, 395, 120, 240)
+
+    fill colour with shirt varliable
+    draw ellipse (280, 395, 120, 240)
+
+    //Drawing head
+    fill colour with head variable
+    draw ellipse (199, 170, 120, 160))
+    draw ellipse (138, 173, 20, 40)
+    draw ellipse (260, 173, 20, 40)
+
+    //Draw mouth
+    fill colour with mouth variable
+    ellipse (199, 255, 25, 12)
+
+    //Draw hair
+    fill colour with hair variable
+    draw quad(255, 180, 230, 115, 251, 100, 257, 150)
+    draw ellipse(240, 108, 25, 30)
+    draw ellipse(190, 100, 100, 45)
+    draw quad(145, 180, 155, 115, 141, 100, 137, 150)
+
+    //Draw Eye
+    fill colour with eye variable
+    draw ellipse(175,173,20,12)
+    draw ellipse(225, 173,20,12)
+    remove Stroke
+
+    //Draw Pupil
+    fill colour with black variable
+    ellipse(175, 173, 6, 6)
+    ellipse(225, 173, 6, 6)
+
+    //Draw Eyebrows
+    make stroke black 
+    make stroke weight 5
+    draw line (182, 159, 160, 160)
+    draw line (213, 159, 233, 160)
+}
+START mousePressed Function(){
+    make background a random colour when mouse is clicked
+}
+
+
+Final Reflection:
+For this project I mainly focused on adding elements such as 
+the colourful dots and changing backgrounds rather than get 
+bogged down too much on creating shapes to make the portrait look 
+more like me. 
+
+Code explanation: 
+first I declared all the variables, I then created the canvas
+with a 400 by 400 size and randomized the background 
+I also set the framerate to 3 frames per second to make the 
+page run 3 times per second, which means that a dot will be 
+generated, and the shirt colour, will change 3 times per second
+
+Next the draw function handles drawing the mouse circles, the 
+background dots, and the actual portrait drawing itself. 
+Mouse circles uses the position of the mouse on the canvas to 
+create a new circle wherever the mouse happens to be on the canvas
+at each frame refresh. 
+
+Background dots appear on each frame refresh at a random location on the 
+canvas, note that there is a restriction on how low the dots can 
+appear on the y axis. 
+
+The portrait was generated neck, shirt, neck base, head, mouth, hair
+, eye, pupil and eyebrows in that order. It is drawn in this order
+so that each shape is properly placed and drawn in the correct order
+
+The mousePressed Function simply randomizes the background colour
+when pressed. 

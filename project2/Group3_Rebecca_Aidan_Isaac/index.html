@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+    <link rel="stylesheet" href="project2.css">
+    <script src="isbn.js"></script><!--File containing the isbn Numbers needs to be run first and put into global directory-->
+    <script src="getBookInfo.js"></script><!--this actvivates the classes and gets them ready to be used-->
+    <body id="navBarBody">
+        <div class="topNav">
+            <a class="active" href="index.html">index</a>
+            <a href="https://www.youtube.com/watch?v=dQw4w9WgXcQ">Mystery Link??</a>
+        </div>
+    </body>
+    <body id="mainBody">
+        <label for="bookSearch">Book Search</label>
+        <input type="text" id="bookSearchInput" >
+        <button onclick="findBooks()">Get books</button><!--Activates the getBooks() Function-->
+        <label for="movieSearch">Movie Search</label>
+        <input type="text" id="movieSearchInput">
+        <button onclick="findMovie()">Get Movies</button>    
+        </br>
+        <div class="row" id="output"></div><!--output for findBooks()-->
+        <div class="row" id="isbnResultsBooks"></div><!--output for bookDetails()-->
+        <div class="row" id="isbnResultsMovies"></div>
+    </body>
+    <script src="jsActivator.js"></script><!--this handles activating js functions and scripts-->
+</html>

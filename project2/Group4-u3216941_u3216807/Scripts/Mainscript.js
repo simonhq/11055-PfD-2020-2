@@ -1,4 +1,8 @@
 var isbnarr = ['0261102214', '9780547773704'];
+var bookarr = [];
+
+
+document.getElementById("button1").innerHTML = x.gettitle();
 
 // we need to be able to wait for processing to happen - so we need to make our function asynchronis
 async function main() {
@@ -6,7 +10,7 @@ async function main() {
     // this is the list of isbn numbers we want information for
   
     // this is the list of books we are going to create
-    var bookarr = [];
+   
    
 
     // the normal for loop we have looked at so far
@@ -24,6 +28,9 @@ for (x of bookarr) {
         "<p>Author: " +x.getAuthor() +
         "<br>"+ x.getpublisher() +
         "<br>"+ x.getsubject() + "</p>"+ "<br>";
+    
+      
+
     
 }
 

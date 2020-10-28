@@ -5,9 +5,16 @@
 -->
 
 <!--For the group - Keir Herbert, Michael Coward, & Sujith Kumar.-->
-
 <!DOCTYPE html>
 <html>
+<!--Set the background image, don't tile it, and make it cover the page.-->
+<style>
+    body {
+        background-image: url('books.jpg');
+        background-repeat: no-repeat;
+        background-size: cover;
+    }
+</style>
 
 <!--Set the web browser tab/window title.-->
     <title>Project 2: Book Information Website</title>
@@ -21,12 +28,12 @@
         <div class="w3-panel w3-light-gray">                                        <!--Define the panel and its colour.-->
             <h1>Programming for Design (11055)</h1>                                 <!--Display the heading.-->
             <h2>Project 2 - <i>Book Information Website</i></h2>                    <!--Display the sub-heading.-->
-            <p>Keir Herbert (u3211239)</p>                                          <!--Display the paragraph text.-->
+            <p>Keir Herbert - for group including Michael Coward & Sujith Kumar</p> <!--Display the paragraph text.-->
         </div>                                                                      <!--End the panel section.-->
 
 <!--Create a table to organise the returned book information.-->
 <div class="w3-container w3-center">                                                <!--Create a container in which to place the table.-->
-    <table class="w3-table-all w3-card-4" id="tableOfBooks" style="width:100%">     <!--Create a table with an ID that can be referenced by JavaScript.-->
+    <table class="w3-table-all w3-container-4 w3-center" id="tableOfBooks">         <!--Create a table with an ID that can be referenced by JavaScript.-->
         <thead>                                                                     <!--Create the table column headings.-->
             <tr class="w3-black">                                                   <!--Set the heading background colour.-->
                 <th>Cover</th>                                                      <!--Add each individual column heading.-->

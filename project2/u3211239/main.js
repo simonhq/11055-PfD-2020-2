@@ -42,6 +42,5 @@ async function main() {                                             //  Create t
         publishDate.innerHTML = book.getPublishedDate();            //  Place the date of publication into the cell called 'publishDate'.
         pageCount.innerHTML = book.getPageCount();                  //  Place the page count into the cell called 'pageCount'
         filmTV.innerHTML = movie.getMovieTitle();                   //  Place the possible movie connection into the cell called 'filmTV'.
-        // filmTV.innerHTML = '<a href="http://google.com">' + movie.getMovieTitle();
     }
 }

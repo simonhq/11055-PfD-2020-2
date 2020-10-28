@@ -18,10 +18,11 @@ class bookCover {
     }
 
     display() {
-//      Return the correct html for this book cover
-        return this.url_a + this.key + this.isbn + this.size + this.url_b;  //  Combine the two URL ends with the key, ISBN, and size properties to return a valid URL.
+//  This method returns the correct HTML for this book cover.
+//  Combine the two URL ends with the key, ISBN, and size properties to form a valid URL.
+        var bookCoverURL = this.url_a + this.key + this.isbn + this.size + this.url_b;
+        return bookCoverURL;                                                //  Return the assembled variable.
     }
-
 }
 
 class bookDetail {
@@ -46,6 +47,7 @@ class bookDetail {
     }
     
     async getDetail() {
+//  This method calls the getBookDetail function to collect the JSON object data.
         let dets = await getBookDetail(this.url_a, this.key, this.isbn, this.url_b);
         this.detail = dets[this.key + this.isbn];
     }
@@ -70,7 +72,8 @@ class bookDetail {
 
     getTitle() {
 //  Return the book's title from the JSON object.
-        return this.detail['title'];
+        var bookTitle = this.detail['title'];                               //  Create a new variable holding the value of the book's title.
+        return bookTitle;                                                   //  Return the variable as the result.
     }
 
     getPublisher() {
@@ -102,13 +105,6 @@ class bookDetail {
         }
     }
 
-//     getFirstSentence() {
-// //  Returns the book's first sentence from the JSON object.
-//         var firstSentence = this.detail['excerpts'][0]['first_sentence'];   //  Pass the value from the bookCover class into the pageCount variable.
-//         return firstSentence;
-//     }
-    
-
     getPageCount() {
 //  Return the book's page count from the JSON object.
         var pageCount = this.detail['number_of_pages'];                     //  Pass the value from the bookCover class into the pageCount variable.
@@ -134,6 +130,7 @@ class movieInfo {
     }
 
     async getInfo() {
+//  This method calls the getMovieInfo function to collect the JSON object data.
         let inf = await getMovieInfo(this.url_a, this.key, this.url_b, this.movie);
         this.detail = inf;
     }
@@ -176,7 +173,6 @@ async function getMovieInfo(url_a, key, url_b, movie) {                     //  
     try {
         const resp = await fetch(url);                                      //  Fetch the HTML data from the API.
         const jres = await resp.json();                                     //  Convert it into the JSON format.
-        console.log(jres);
         return jres;                                                        //  Return the JSON object data.
     }
     catch (err) {                                                           //  Catch any errors when trying to fetch the data from the API.

@@ -1,47 +1,66 @@
 main();
-
-
-
-// we need to be able to wait for processing to happen - so we need to make our function asynchronis
 async function main() {
-
-
-    // this is the list of isbn numbers we want information for
-    var isbnarr = ['0261102214', '9780547773704', '9782012814141'];
-    // this is the list of books we are going to create
+//isbn numbers
+    var isbnarr = ['0261102214','9780547773704','9780520079779', '9782012814141'];
     var bookarr = []
 
-    // the normal for loop we have looked at so far
     for (let i = 0; i < isbnarr.length; i++) {
         let book = new bookDetail(isbnarr[i], "M");
         await book.getDetail();
         bookarr.push(book);
     }
-
-    document.write('<h1 style="text-align:center;background-color:white;font-family:typewriter;border:2px solid blue;">Pretty Books</h1>')
-    document.write('<body style="background-color:grey;">')
-    document.write('<style>')
-    document.write('div {margin-top:30px;padding:40px;border-radius:50px;border:20px solid black; background-color: lightgrey;}')
-    document.write('</style>')
-
-    // the for (variable of iterable) will loop through each item in an array
+//header details including title and images and colours
+    document.write('<h1 style="padding:10px;background-color:white;font-family:typewriter;border:2px solid blue;">'
+    +'&nbsp; <img src="https://i.imgur.com/DfCAmeC.jpg" alt="bookHeader" style="width:200px;">'
+    +'<img src="https://i.imgur.com/DfCAmeC.jpg" alt="bookHeader" style="width:200px;">'
+    +'<img src="https://i.imgur.com/DfCAmeC.jpg" alt="bookHeader" style="width:200px;">'
+    + '&nbsp; Books &nbsp;'
+    +'<img src="https://i.imgur.com/DfCAmeC.jpg" alt="bookHeader" style="width:200px;">'
+    +'<img src="https://i.imgur.com/DfCAmeC.jpg" alt="bookHeader" style="width:200px;">'
+    +'<img src="https://i.imgur.com/DfCAmeC.jpg" alt="bookHeader" style="width:200px;">'
+    +'</h1>'
+    + '<body style="background-color:grey;">'
+    //set style parameters for the left side of the page
+    +'<style>'
+    + 'div {width:20%; margin-left:40px; margin-right:40px; margin-top:80px; margin-bottom: 100px;'
+    +'width:360px; height:300px;padding:50px;border-radius:50px;border:20px solid black;background-color:lightgrey;}'
+    +'</style>'
+    )
+    
     for (x of bookarr) {
+//right side of page
+        document.write('<div style= "float:right; width:40%; height: 20%; margin-top:100px; margin-bottom:1px; margin-left:40px"; margin-right: 40px; padding: 40px;>'
+        + 'Published' + " "
+        + x.getPublishDate() + " "
+        +'By' + " "
+        + x.getPublishers() + '<br></br>'
+        + 'Pages:' + " " + x.getPageNumbers() + '<br></br>'
+        + 'Subjects:' + " " + x.getSubjects() + '<br></br>'
+        + '<a href="'+ x.getSubURL() + '">More books in this subject</a>'
+   
+        +'</div>'
+        )
+       //information on left side
         document.write('<div>');
-        document.write('<p style="background-color:lightgrey; font-family:americantypewriter;"</p>');
-        document.write("&nbsp;&nbsp;" + x.cover() + "<br></br>");
-        document.write(x.getTitle() + "<br></br>" );
-        document.write(x.getAuthor() + "<br></br>");
-        document.write('</div>')
+        //image
+        document.write(x.cover() + 'style="float:left; padding: 10px;"' + '<br></br>'  + '<br></br>'
+        );
+        //text
+        document.write('<h2>' + x.getTitle() + '</h2>' + '<br></br>');
+        document.write('<p style="background-color:lightgrey; font-family:americantypewriter;"</p>' + '<br></br>');
+        document.write( x.getAuthor() + '<br></br>');
+        document.write('</div>');  
+       
 
-        
-        
     }
+
+    
 }
 
 
 
 
-
+//text-align:center;
 
 
 

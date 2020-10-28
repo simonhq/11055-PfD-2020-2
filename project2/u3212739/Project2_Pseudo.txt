@@ -43,8 +43,7 @@ When Window is first loaded
     DO
         IF 'About' is pressed {
             CHANGE site to 'About'
-        } 
-        ELSE IF 'Homepage' is pressed {
+        } ELSE IF 'Homepage' is pressed {
             CHANGE site to 'Homepage'
         }
     LOOP
@@ -52,11 +51,11 @@ When Window is first loaded
 
 ASYNC FUNCTION fetchDetails {
     REQUEST book data for each ISBN in ISBNList
-    WAIT till response recieved
+    WAIT till response received
     STORE Data in an object called 'bookData'
 
     REQUEST movie data for each Book in ISBNList the titles from bookData
-    WAIT till response recieved
+    WAIT till response received
     STORE Data in an object called 'movieData'
 
     RUN displayBook
@@ -70,7 +69,7 @@ FUNCTION displayBook {
         DISPLAY nextButton
         DISPLAY homeButton
         } 
-    ELSE IF currentPage's ISBN is invaild {
+    ELSE IF currentPage's ISBN is invalid {
         DISPLAY "This book is not available. Please check the ISBN and try again."
         DISPLAY backButton
         DISPLAY nextButton

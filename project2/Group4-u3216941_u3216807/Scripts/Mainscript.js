@@ -41,12 +41,7 @@ async function buildBook(isbn){
     {
         document.getElementById("coverimg").innerHTML = x.cover();
         document.getElementById("bookinfo").innerHTML = 
-            "<br>"+"<h3>"+x.gettitle() +"<br> "+ x.getsubtitle() + "</h3>" + "<br>"+
-            "<p> <b>"+"Summary: </b><br>"+ x.getabstract() + "<br>"+
-            "<b>Author:</b><br> " +x.getAuthor() +
-            "<br> <b> Publisher: </b> <br>"+ x.getpublisher() +
-            "<br><b>Subject: </b><br>"+ x.getsubject() + "</p>"+ "<br>"+
-            "<b>Number Pages in Book: </b><br>"+ x.getpages() +"</p>"+ "<br>";
+            x.gettitle() + x.getsubtitle() + x.getabstract()+x.getAuthor() + x.getpublisher() + x.getsubject() + x.getpages() ;
 
     } 
 }

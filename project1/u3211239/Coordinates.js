@@ -6,12 +6,11 @@
 
 /*  Create pseudo-multi-dimensional array for storing pixel coordinates.
 
-    Because JavaScript is not able to directly access the client's file system without the user giving permission by selecting a
-    file, an alternative is to hold the data in code rather than read it from a file into an array.
+    Because JavaScript is not able to directly access the client's file system without
+    the user giving permission by selecting a file, an alternative is to hold the data
+    in code rather than read it from a file into an array.
 
-    There are more than 10,000 lines though; happy scrolling!
-
-    Spolier: There's nothing interesting at the end unless you're into semicolons.
+    There are more than 10,000 lines; happy scrolling!
 */
 var coordinates = [
     [103,0],

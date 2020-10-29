@@ -1,11 +1,3 @@
-/* Always write a comment at the top of your file saying what is for
-you might even include your name and the date */
-
-// Object orientation
-
-/* writing a class
-
-*/
 
 class bookCover {
 
@@ -63,12 +55,22 @@ class bookDetail {
         this.detail = dets[this.key + this.isbn];
 
     }
-
+   gettitle(){
+       return this.detail['title'];
+       
+   }
+   getsubtitle(){
+       if (!this.detail['subtitle'])
+         return "";
+       else{
+       return this.detail['subtitle'] ;
+         
+       }
+   }
     getAuthor() {
         // get the author from the json object
         return this.detail['authors'][0]['name'];
-        
-    }
+        }
     getpublisher(){
         return this.detail['publishers'][0]['name'];
     }

@@ -26,22 +26,24 @@
       }
         
     </style>
-    <script src="Scripts/JsClasses.js"></script>        
-    <script src="Scripts/Search.js"></script>
+    <script src="Scripts/Mainscript.js"defer></script>
+    <script src="Scripts/JsClasses.js"></script>   
     </head>
     <body>
-        <script src="Scripts/Mainscript.js"></script>
+        
         
 
         <div class = "header">
             <h1>Project 2</h1>
         </div>
-        <button type ="button" id="button1" onclick="main()">Display books</button>
         <div class="middle">         
         <input type="text" name="searchbar" id="searchbar"  placeholder="Search for Isbn" height="100" />               
-        <button type="button" id="searchbutton"  onclick="addisbn()">Search</button>
+        <button type="button" id="searchbutton"  onclick="search()">Search</button>
         </div>
       
+
+<select id="selcetarr">
+          </select>
         <div id="coverimg">
 
         </div>

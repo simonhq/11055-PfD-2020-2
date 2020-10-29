@@ -67,15 +67,26 @@ class bookDetail {
          
        }
    }
+   getabstract(){
+       if(!this.detail['excerpts'])
+        return "";
+      else{
+        return this.detail['excerpts'][0]['text'];
+      } 
+   }
     getAuthor() {
         // get the author from the json object
         return this.detail['authors'][0]['name'];
         }
     getpublisher(){
-        return this.detail['publishers'][0]['name'];
+        return this.detail['publishers'][0]['name'] +"<br>" +this.detail['publish_date'];
+
     }
     getsubject(){
         return this.detail['subjects'][0]['name'];
+    }
+    getpages(){
+        return this.detail['number_of_pages'];
     }
    
     

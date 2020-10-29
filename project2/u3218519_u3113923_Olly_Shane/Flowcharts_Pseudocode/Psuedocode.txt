@@ -1,0 +1,396 @@
+////////////
+
+Pseudocode for The Book Depository website
+Website by Olly Hills u3218519 & Shane Ducksbury u3113923
+Last Edited 26/10/2020
+
+///////////
+///////////
+
+File: main.js
+
+***********
+Main Application Flow
+
+START
+
+CALL main Function
+
+END
+
+
+***********
+FUNCTIONS
+***********
+
+FUNCTION main
+Pass In: Nothing
+    CALL importPopulateBooks Function to Import the book array and populate the site
+
+Returns: Nothing
+EndFunction
+
+
+///////////
+///////////
+
+File: app.js
+DESCRIPTION: Contains the main functions for app, such as getting books and calling functions to populate the page.
+
+
+app.js - Application Flow
+
+START
+
+CREATE bookArray to store book objects created in importPopulateBooks 
+
+END
+
+
+***********
+FUNCTIONS
+***********
+
+FUNCTION fetchURL
+Pass In: URL
+    Attempt to get a Response from URL
+    IF Good Response (200) from URL:
+        Return the response JSON file
+    IF Bad Response from URL:
+        Return the Response Status for Error Checking
+
+Returns:
+    IF Good Response from URL:
+        Response JSON file
+    IF Bad Response from URL:
+        Response Status
+EndFunction
+
+
+FUNCTION getBook
+Pass In: ISBN, Type of Search
+    Create Constants containing Parts of Open Library API URLs for searches
+
+    IF Type of Search is ISBN
+        SET bookURL to correct Open Library ISBN API query
+    ELSE IF Type of Search is DATA
+        SET bookURL to correct Open Library Bibkeys API Query
+    ENDIF
+
+    CALL fetchURL Function to get the book JSON from Open Library API
+    RETURN Book Object
+
+Returns: Book Object
+EndFunction
+
+
+FUNCTION addBookToArray
+Pass In: Book, Array to Add Book to
+    Add the Book to the Array Passed Into the Function
+
+Returns: Nothing
+EndFunction
+
+
+FUNCTION populateBooks
+Pass In: Array of Books
+    IF pageLoaded boolean is True
+        Clear the output on the web page to make way for the new Books
+    ENDIF
+
+    FOR Each Book in the Array of Books
+        CALL outputBookToPage with the Book
+    ENDFOR
+
+Returns: Nothing
+EndFunction
+
+
+FUNCTION importPopulateBooks
+Pass In: Array of ISBNs
+
+    FOR Each ISBN in the Array of ISBNs
+        CALL loadingResults with current item number in array and the total number of items in the array
+
+        CALL getBook with the ISBN using the ISBN search
+        
+        IF There is an error with the Search
+            Move on to the next ISBN
+        ENDIF
+
+        CALL getBook with the ISBN using the DATA search
+
+        Create a new Book Object from the Book Class
+
+        Populate the new Book Object using data from the getBook queries
+
+        CALL checkForMovie method on the new Book Object to check if the Book has a movie
+
+        CALL addBookToArray Function with new Book Object and bookArray
+    ENDFOR
+
+    IF The Array of ISBN is empty
+        Show the no results card
+    ENDIF
+
+    CALL populateBooks Function with bookArray
+
+Returns:
+EndFunction
+
+
+///////////
+///////////
+
+File: site-functions.js
+DESCRIPTION: Contains functions to modify the page by interacting and creating HTML from passed in data
+
+
+site-functions.js - Application Flow
+
+START
+
+SET outputDiv Constant to the HTML Element Output location for use by functions
+SET searchQuery Constant to the memory Location of the Search Bar to be used by functions
+
+SET pageLoaded Variable to FALSE to indicate the page hasn't loaded yet
+
+END
+
+
+***********
+FUNCTIONS
+***********
+
+FUNCTION outputBookToPage
+Pass In: Book Object made from Book Class
+    IF pageLoaded is FALSE
+        SET pageLoaded to TRUE to indicate the page is loaded
+        Hide the Loading Card
+    ENDIF
+
+    CALL buildBookCardContent with Book Object details for the Main Card and SET cardTitleContent to the return Value
+    CALL buildAccordionContent with Book Object details for the Accordion and SET accordionContent to the return Value
+
+    CALL buildCard with cardTitleContent , accordionContent and the Book Object Cover to output a card to the page
+
+Returns: Nothing
+EndFunction
+
+
+FUNCTION buildBookCardContent
+Pass In: Text to populate parts of HTML content
+    Create HTML for title Cards using HTML template and Text passed into the Function
+
+Returns: HTML String populated with input text
+EndFunction
+
+
+FUNCTION buildAccordionContent
+Pass In: Text to populate parts of HTML content, Text Content to create movie if book has movie
+    Create HTML for accordion using HTML template and Text passed into the Function
+
+    IF Book has Movie
+        Use Text Content to Create Movie HTML to append to accordion
+    ENDIF
+
+Returns: HTML String populated with input text
+EndFunction
+
+
+FUNCTION buildBookCardAccordion
+Pass In: HTML in a string (CALL buildAccordionContent for correct HTML template)
+    Create Accordion HTML Elements
+    Set Accordion Outer HTML ID to match the Card it is being added to
+    Set Accordion content to HTML passed into function
+
+Returns: Accordion HTML Content to append to a Card
+EndFunction
+
+
+FUNCTION insertBreak
+Pass In: Nothing
+    Create a Break Element to be appended to the output location
+
+Returns: Nothing
+EndFunction
+
+
+FUNCTION buildCard
+Pass In: HTML to be used in the card, [Optional] Cover Image URL for the Card, [Optional] Accordion HTML to be used in the card
+    Create New Card HTML Elements
+
+    IF Cover Image is passed to function
+        Create Cover Image Elements
+        Set the HTML of the Cover Images to the URL passed in
+        Add the Cover Image Elements to the Card
+    ENDIF
+
+    Set the Card HTML to the passed in HTML
+
+    IF Accordion HTML is passed to function
+        Call buildBookCardAccordion Function with passed in Accordion HTML
+        Add the accordion to the Card
+    ENDIF
+
+    Append the New Card to outputDiv HTML element
+    Call insertBreak Function to append a break to outputDiv HTML Element
+
+Returns: Nothing
+EndFunction
+
+
+FUNCTION loadingResults
+Pass In: Number, Number representing amount of items of an array
+    Output HTML to the loading Card indicating which number in the array the program is loading
+
+Returns: Nothing
+EndFunction
+
+
+FUNCTION searchBookArray
+Pass In: Search Term
+    Create Empty matchedBooks Array
+    IF Book Title OR Book Author OR Book ISBN matches any of the items in bookArray Array where the books are stored
+        Add the Book Object from bookArray to matchedBooks
+    ENDIF
+
+Returns: matchedBooks Array
+EndFunction
+
+
+FUNCTION searchBooks
+Pass In: Nothing
+    CALL searchBookArray with Input Data from the searchQuery constant
+    IF returned Array from searchBookArray has objects
+        CALL populateBooks Function with the returned Array
+    ELSE
+        CALL noResults Function
+
+Returns: Nothing
+EndFunction
+
+
+FUNCTION noResults
+Pass In: searchQuery
+    IF pageLoaded is TRUE
+        Clear the outputDiv HTML to prepare to populate page
+    ENDIF
+
+    Set noResultsHTML Variable to text No Results
+
+    CALL buildCard with noResultsHTML
+
+Returns:
+EndFunction
+
+
+FUNCTION noBooksInArray
+Pass In: Nothing
+    Empty the HTML in the content div
+    Hide the Search Bar
+
+    Create No Books Found HTML
+
+    CALL buildCard Function with content
+
+Returns: Nothing
+EndFunction
+
+
+///////////
+///////////
+
+File: book.js
+DESCRIPTION: Contains the Book Class for use by app.js
+
+
+book.js - Application Flow
+
+No Application Flow - Class File Only
+
+
+***********
+CLASS
+***********
+
+Create Class with Default Values
+- Title
+- Author
+- Published Date
+- ISBN
+- Cover: Dummy Cover
+- Description: Dummy Description
+- Genres
+- Movies Information - may be able to get rid of this
+- Has Movie Boolean: False
+- Movie Details
+
+
+CLASS CONSTRUCTOR
+Pass In: title, author, publishedDate, ISBN
+    Create new object
+    Set Object title to title
+    Set Object author to author
+    Set Object publishedDate to publishedDate
+    Set Object ISBN to ISBN
+
+Returns: New Book Object
+EndClassConstructor
+
+
+***********
+METHODS
+***********
+
+
+CLASS METHOD setCoverArt
+Pass In: Cover Art URL
+    Set Object cover to passed in Cover Art URL
+
+Returns: Nothing
+EndMethod
+
+
+CLASS METHOD setGenres
+Pass In: Array or String of Book Genres
+    Set Object genres to input data
+
+Returns: Nothing
+EndMethod
+
+CLASS METHOD setDescription
+Pass In: Book Description
+    Set Object book description to Book Description
+
+Returns:
+EndMethod
+
+CLASS METHOD checkForMovie
+Pass In: Nothing
+    Set constants to build omdB URL search
+    Set constant using Book Object title
+
+    SET searchURL constant built from search query constants and book title
+
+    CALL fetchURL with searchURL and SET movies constant to the return result
+
+    IF movies contains a valid movie response from omdb
+
+        Set book object Has Movie boolean to TRUE
+        Create a new Search URL using the IMDB ID from the movie object
+        CALL fetchURL with new Search URL and set movieReturn constant to return result
+
+        IF movieReturn contains a valid response from omdb
+            Create a movie object with the following:
+                - Movie Title
+                - Movie Year
+                - Movie Poster
+                - Movie Director
+            Add Movie Object to Book Object Movie Details
+        ENDIF
+    ENDIF
+
+Returns: Nothing
+EndMethod
+

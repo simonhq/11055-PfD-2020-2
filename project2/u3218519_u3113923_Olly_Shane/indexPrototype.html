@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="assets/css/reset.css">
+    <link rel="stylesheet" href="https://unpkg.com/spectre.css/dist/spectre.min.css">
+    <link rel="stylesheet" href="https://unpkg.com/spectre.css/dist/spectre-exp.min.css">
+    <link rel="stylesheet" href="https://unpkg.com/spectre.css/dist/spectre-icons.min.css">
+    
+    <link rel="stylesheet" href="assets/css/styles.css">
+    <title>The Book Repository</title>
+</head>
+<body>
+    <div class="background">
+    <div class="container">
+
+        <div class="break"></div>
+
+        <!-- Page Hero Area -->
+        <div class="columns">
+            <div class="column col-10 col-mx-auto">
+                <div class="hero blunt">
+                    <div class="hero-body">
+                    <h1>The Book Repository</h1>
+                    <h4>Find great reads</h4>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="break"></div>
+
+        <!-- Page Navigation and Search -->
+        <div class="columns">
+            <div class="column col-8 col-mx-auto">
+                <header class="navbar blunt">
+                    <section class="navbar-section">
+                        <div class="input-group input-inline">
+                            <input class="form-input" type="text" placeholder="Title, Author, ISDN">
+                            <button class="btn  input-group-btn"><span>&#x1F50D;</span> Find A Read</button>
+                        </div>
+                    </section>    
+                </header>
+
+                <div class="break"></div>   
+
+                <div class="content column col-8 col-mx-auto blunt">
+
+                    <!-- Book Card -->
+                    <div class="bookCard">
+                        <img class="bookCard-Cover" src="https://covers.openlibrary.org/b/id/8235163-M.jpg" alt="Book cover image">
+                        <div class="bookCard-Content">
+                            <h2><span class="bookTitle">Harry Potter and the Half-Blood PrinceHarry Potter and the Half-Blood Prince</span></h2>
+                            <h4><span class="bookAuthor">J.K. Rowling</span> | <span class="bookPublishDate">2004</span></h4>
+                        </div>
+                        
+
+                        <!-- Book Card Details Reveal -->
+                        <div class="bookCard-details">
+                        
+                            <div class="accordion">
+                                <input type="checkbox" id="accordion-1" name="accordion-checkbox" hidden>
+                                <label class="accordion-header" for="accordion-1">See Details<i class="icon icon-arrow-right mr-1"></i>
+                                </label>
+                                <div class="accordion-body">
+                                    <div class="line"></div>
+                                    <div class="bookCard-detailsContents">
+
+                                        
+
+                                        <h5><span class="accent">Publisher:</span> <span class="bookPublishDate lightContent">Penguin</span></h5>
+
+                                        <h5 class="accent">Description:</h5>
+                                        <p class="description lightContent">The war against Voldemort is not going well: even Muggle governments are noticing. Ron scans the obituary pages of The Daily Prophet looking for familiar names. Dumbledore is absent from Hogwarts for long stretches of time, and the Order of the Phoenix has already suffered losses.</p>
+            
+                                        <p> And yet … </p>
+                                        
+                                        <p> As in all wars, life goes on. Sixth-year students learn to Apparate, and lose a few eyebrows in the process. The Weasley twins expand their business. Teenagers flirt and fight and fall in love. Classes are never straightforward, though Harry receives some extraordinary help from the mysterious Half-Blood Prince. </p>
+                                        
+                                        <p> So it's the home front that takes center stage in the multilayered sixth installment of the story of Harry Potter. Here at Hogwart's , Harry will search for the full and complex story of the boy who became Lord Voldemort - and thereby find what may be his only vulnerability.</p>
+                                    
+                                        <h5><span class="accent">Subjects:</span> <span class="bookSubjects"><a class="chip">Young Adult</a><a class="chip">Fantasy</a><a class="chip">Fiction</a></span></h5>
+
+                                    </div>
+
+                                    <div class="line"></div>
+                                    <div class="break"></div> 
+
+                                    <!-- Movie Info -->
+                                    <div class="movieInfo">
+                                        <h3 class="movieHeading">It's a Movie too!</h3>
+                                        <div class="movieLine"></div> 
+                                        <a class="movieCard" href="/" >
+                                            <img src="assets/images/No_Cover.jpg" alt="Movie Poster">
+                                            <div class="movieCard-content">
+                                                <h3><span class="movieTitle">Harry Potter and the Half-Blood Prince</span></h3>
+                                                <h4><span class="director">J.K. Rowling</span> | <span class="movieReleaseDate">2004</span></h4>
+                                            </div>
+                                            
+                                        </a>
+                                    </div>
+
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+
+                    <div class="break"></div>   
+
+                    <!-- Loading Card Prototype -->
+                    <div class="bookCard" id="loading-bookCard">
+                        <div class="bookCard-Content bookCard-loading blunt">
+                                <div class="loading loading-lg"></div>
+                                <h4>Books arriving any second now...</h4>
+                        </div>
+                    </div>
+                    <div class="break"></div>
+
+                    <!-- No Results -->
+                    <div class="bookCard blunt">
+                        <div class="bookCard-Content noBook blunt">
+                            <h2><span class="bookTitle">Sorry, no books found...</span></h2>
+                            <h6><span class="bookAuthor">Maybe it's time to start writing that novel you've been thinking about </span></h6>
+                        </div>
+                    </div>
+
+                </div>
+
+            </div>
+        </div>
+
+
+    <!--Container End  -->
+    </div> 
+    </div>
+</body>
+</html>

@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="assets/css/reset.css">
+    <link rel="stylesheet" href="https://unpkg.com/spectre.css/dist/spectre.min.css">
+    <link rel="stylesheet" href="https://unpkg.com/spectre.css/dist/spectre-exp.min.css">
+    <link rel="stylesheet" href="https://unpkg.com/spectre.css/dist/spectre-icons.min.css">
+    
+    <link rel="stylesheet" href="assets/css/styles.css">
+    <script src="assets/scripts/isbn.js"></script>
+    <script src="assets/scripts/book.js" defer></script>
+    <script src="assets/scripts/site-functions.js" defer></script>
+    <script src="assets/scripts/app.js" defer></script>
+    <script src="assets/scripts/main.js" defer></script>
+    <title>The Book Repository</title>
+</head>
+<body>
+    <div class="background">
+    <div class="container">
+
+        <div class="break"></div>
+
+        <!-- Page Hero Area -->
+        <div class="columns">
+            <div class="column col-10 col-mx-auto">
+                <div class="hero blunt">
+                    <div class="hero-body">
+                    <h1>The Book Repository</h1>
+                    <h4>Find great reads</h4>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="break"></div>
+
+        <!-- Page Navigation and Search -->
+        <div class="columns">
+            <div class="column col-8 col-mx-auto">
+                <header class="navbar blunt" id="all-nav-elements">
+                    <section class="navbar-section">
+                        <div class="input-group input-inline">
+                            <input class="form-input" type="text" placeholder="Title, Author, ISBN" id="search-text">
+                            <button class="btn  input-group-btn"><span>&#x1F50D</span> Find A Read</button>
+                        </div>
+                    </section>    
+                </header>
+
+                <div class="break"></div>   
+                
+                <!-- Page cards will render in here  -->
+                <div class="content column col-8 col-mx-auto blunt" id="content-output">
+                    
+                    <!-- Always start with the loading div  -->
+                    <div class="bookCard" id="loading-bookCard">
+                        <div class="bookCard-Content bookCard-loading blunt">
+                                <div class="loading loading-lg"></div>
+                                <div id="loading-status"></div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+
+    <!--Container End  -->
+    </div> 
+    </div>
+</body>
+</html>

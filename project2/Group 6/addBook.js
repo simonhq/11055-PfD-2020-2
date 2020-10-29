@@ -26,12 +26,10 @@ async function main() {
     }
     
     else {
-        document.write("The array is empty");         //Resulting message if the array is empty  (i.e isbnlist.length = 0)
+      document.write("The array is empty");         //Resulting message if the array is empty  (i.e isbnlist.length = 0)
     
     }
-
     document.write('<link rel="stylesheet" href="style.css">');
-
     document.write("<H1>This is the Book Database for Students U3189665, U103850 and U3211959 </H1>");
         
     document.write("<table BORDER = 1>"); //These are the table headings. Each one appears indepentant of the rows that are created below.
@@ -56,8 +54,8 @@ async function main() {
 
         /*
         var tbl = document.createElement("TABLE");
-        // the for (variable of iterable) will loop through each item in an array
-        for (x = 0; x < isbnlist.length; x++) {
+    // the for (variable of iterable) will loop through each item in an array
+    for (x = 0; x < isbnlist.length; x++) {
         
         // document.write(x.cover());
         // document.write(x.getAuthor());

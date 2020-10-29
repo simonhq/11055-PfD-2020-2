@@ -1,0 +1,61 @@
+<!--Programming for Design
+    Project 2 - Book Information Website
+    Keir Herbert (u3211239)
+    October 2020
+-->
+
+<!--For the group - Keir Herbert, Michael Coward, & Sujith Kumar.-->
+<!DOCTYPE html>
+<html>
+<!--Set the background image, don't tile it, and make it cover the page.-->
+<style>
+    body {
+        background-image: url('books.jpg');
+        background-repeat: no-repeat;
+        background-size: cover;
+    }
+</style>
+
+<!--Set the web browser tab/window title.-->
+    <title>Project 2: Book Information Website</title>
+
+<!--Define the relationship with the external W3.css style sheet.-->
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    <head></head>
+    <body>
+
+<!--Create the pleasant looking title banner for the web page using the W3 toolkit.-->
+        <div class="w3-panel w3-light-gray">                                        <!--Define the panel and its colour.-->
+            <h1>Programming for Design (11055)</h1>                                 <!--Display the heading.-->
+            <h2>Project 2 - <i>Book Information Website</i></h2>                    <!--Display the sub-heading.-->
+            <p>Keir Herbert - for group including Michael Coward & Sujith Kumar</p> <!--Display the paragraph text.-->
+        </div>                                                                      <!--End the panel section.-->
+
+<!--Create a table to organise the returned book information.-->
+<div class="w3-container w3-center">                                                <!--Create a container in which to place the table.-->
+    <table class="w3-table-all w3-container-4 w3-center" id="tableOfBooks">         <!--Create a table with an ID that can be referenced by JavaScript.-->
+        <thead>                                                                     <!--Create the table column headings.-->
+            <tr class="w3-black">                                                   <!--Set the heading background colour.-->
+                <th>Cover</th>                                                      <!--Add each individual column heading.-->
+                <th>Title</th>
+                <th>Author(s)</th>
+                <th>Publisher(s)</th>
+                <th>Date of Publication</th>
+                <th>Page Count</th>
+                <th>Associated Film/TV Media</th>
+            </tr>                                                                   <!--End the row section.-->
+        </thead>                                                                    <!--End the table heading.-->
+        <tbody id="tableBody"></tbody>                                              <!--Start the table body and give it an ID for JavaScript to reference.-->
+    </table>                                                                        <!--End the table section.-->
+</div>
+
+<!--The JavaScript program provided, which dimensions the array of ISBNs.-->
+        <script src = "./isbn.js"></script>
+
+<!--The JavaScript program that sets up the classes.-->
+        <script src = "./classes.js"></script>
+
+<!--The main JavaScript program.-->
+        <script src = "./main.js"></script>
+    </body>
+</html>

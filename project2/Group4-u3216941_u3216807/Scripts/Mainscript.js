@@ -1,3 +1,10 @@
+/*
+Created by Seth and Taylor
+Info: This javascript file is the main script for the program.
+Which all the main parts that makes the program run.
+*/ 
+
+
 //The  ISBN array, store all the number
 var isbnarr = ['0261102214', '9780547773704'];
 //bookarr adds the book info into here

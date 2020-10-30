@@ -13,7 +13,7 @@ async function main() {
         bookarr.push(book);
     }
 //header details including title and images and colours
-    document.write('<h1 style="padding:10px;background-color:white;font-family:americantypewriter;border:2px solid #FDD578;">'
+    document.write('<h1 style="padding:10px;background-color:white;font-family:Georgia;border:2px solid #FDD578;">'
     +'&nbsp; <img src="https://i.imgur.com/DfCAmeC.jpg" alt="bookHeader" style="width:200px;">'
     +'<img src="https://i.imgur.com/DfCAmeC.jpg" alt="bookHeader" style="width:200px;">'
     +'<img src="https://i.imgur.com/DfCAmeC.jpg" alt="bookHeader" style="width:200px;">'
@@ -26,7 +26,7 @@ async function main() {
     //set style parameters for the left side of the page
     +'<style>'
     + 'div {width:20%; margin-left:40px; margin-right:40px; margin-top:80px; margin-bottom: 100px;'
-    +'width:360px; height:300px;padding:50px;border-radius:50px;border:20px solid black;background-color:#EDE6D7;}'
+    +'width:360px; height:300px;padding:50px;border-radius:50px;border:20px solid black;background-color:#EBE9E4;}'
     +'</style>'
     )
     
@@ -50,7 +50,7 @@ async function main() {
         );
         //text
         document.write('<h2>' + x.getTitle() + '</h2>' + '<br></br>');
-        document.write('<p style="background-color #EDE6D7; font-family:arial;"</p>' + '<br></br>');
+        document.write('<p style="background-color: #EBE9E4; font-family:arial;"</p>' + '<br></br>');
         document.write( "Written By" + " " + x.getAuthor() + '<br></br>');
         document.write('</div>');  
     }

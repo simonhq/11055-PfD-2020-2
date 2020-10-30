@@ -51,7 +51,7 @@ TEXT:
     Create text top left "Click mouse to change colours"
 END TEXT
 
-HAIR:
+HAIR
     hairStrands = 500
     i = 0
     setColour = C_array

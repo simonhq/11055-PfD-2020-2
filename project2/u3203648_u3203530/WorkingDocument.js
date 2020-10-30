@@ -1,3 +1,6 @@
+//working document which will contain the html script to give the site its appearance
+//as well as the links to the keys defined in the set up document 
+
 main();
 async function main() {
 //isbn numbers
@@ -10,7 +13,7 @@ async function main() {
         bookarr.push(book);
     }
 //header details including title and images and colours
-    document.write('<h1 style="padding:10px;background-color:white;font-family:typewriter;border:2px solid blue;">'
+    document.write('<h1 style="padding:10px;background-color:white;font-family:americantypewriter;border:2px solid blue;">'
     +'&nbsp; <img src="https://i.imgur.com/DfCAmeC.jpg" alt="bookHeader" style="width:200px;">'
     +'<img src="https://i.imgur.com/DfCAmeC.jpg" alt="bookHeader" style="width:200px;">'
     +'<img src="https://i.imgur.com/DfCAmeC.jpg" alt="bookHeader" style="width:200px;">'
@@ -36,7 +39,7 @@ async function main() {
         + x.getPublishers() + '<br></br>'
         + 'Pages:' + " " + x.getPageNumbers() + '<br></br>'
         + 'Subjects:' + " " + x.getSubjects() + '<br></br>'
-        + '<a href="'+ x.getSubURL() + '">More books in this subject</a>'
+        + '<a href="'+ x.getSubURL() + '" target="_blank">More books in this subject</a>'
    
         +'</div>'
         )
@@ -50,20 +53,5 @@ async function main() {
         document.write('<p style="background-color:lightgrey; font-family:americantypewriter;"</p>' + '<br></br>');
         document.write( x.getAuthor() + '<br></br>');
         document.write('</div>');  
-       
-
     }
-
-    
 }
-
-
-
-
-//text-align:center;
-
-
-
-
-
-

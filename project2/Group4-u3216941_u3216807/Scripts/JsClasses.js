@@ -1,3 +1,10 @@
+/*
+Created by Seth and Taylor
+Info: This javascript file is the classes for the
+book information and book cover.
+*/ 
+
+
 //The class recive the book cover from the open libary using the isbn number that has been given
 class bookCover {
     //contrastor seting the isbn number, the size of cover

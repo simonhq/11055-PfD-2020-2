@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+ 
+<head>
+<link rel="stylesheet" type='text/css' href="style.css">
+</head>
+ 
+<body>
+    <!-- This is the first class for the toggle -->
+    <div class="toggle"></div>
+    <!-- This class is the text on top of the toggle Day/Night mode -->
+    <div class="daynightmode">Day/Night Mode</div>
+    <!-- Jsquery is an online JS library that makes things easier for CSS animation (in this case; the movement of the circle for the
+        toggle day and night mode)
+    This $ is the function for the day and night toggle -->
+ 
+    <script src="https://code.jquery.com/jquery-3.5.1.js"></script>
+    <script src = "./class.js"></script>
+    <script src = "./home.js"></script> 
+    <script type="text/javascript">
+    
+        $(document).ready(function() {
+            $('.toggle').click(function() {
+                $('.toggle').toggleClass('switched')
+                $('body').toggleClass('night') 
+                
+ 
+ 
+        })
+        })
+        </script>
+ 
+<!-- This part is for the general appearance of the website (headers, paragraphs; font etc) -->
+    <div class="header">
+        <h1>Search ISBN Number</h1>
+        <div class="search">
+            <form action="output.html" method="GET">
+                <input type="text" name="isbn" pattern=".{0,}[0-9]" title="Please input numbers only!"/> <!-- .{0,}[0-9] makes sure the input only accepts letters-->
+                <input type="submit" value="Submit" />
+            </form> 
+        </div>
+ 
+        <div class="main">
+            <div class="selection">
+                <script src = "./.js"></script>
+                <script src = "./.js"></script> 
+                <script src = "./.js"></script>
+                <script src = "./.js"></script> 
+                <script src = "./.js"></script>
+                <script src = "./.js"></script> 
+                <script src = "./.js"></script>
+                <script src = "./.js"></script> 
+                <script src = "./.js"></script>
+                <script src = "./.js"></script> 
+            </div>
+
+            <div id="book" style='width: 80%; margin: 10px auto;'>
+
+            </div>
+        </div>
+</body>
+ 
+ 
+</html>
+ 

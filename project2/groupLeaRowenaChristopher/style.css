@@ -1,0 +1,172 @@
+/*THIS IS A CSS STYLE SHEET CONTAINING CLASSES FOR THE NIGHT AND DAY MODE TOGGLE*/
+ 
+ 
+/* This is the colour of the background  when the day mode is switched on. It is switched on by default */
+body
+{
+    background: #e6e4e4;
+    margin: 0;
+    padding: 0;
+    font-family: Helvetica;
+    transition: 0.4s;
+}
+ 
+                        /* WHAT IS GOING TO FOLLOW IS EVERYTHING LINKED TO THE TOGGLE DARK DAY MODE */
+ 
+/* This is the colour of the background  when the dark mode is switched on */
+body.night
+{
+    background: #23273f;
+ 
+}
+ 
+/* This is the sentence written over the toggle which says Day/Night Mode. 
+Its location is on the top right corner.
+The letters are dark by default.
+DAY MODE */
+.daynightmode
+{
+    position: absolute;
+    font-weight: bold;
+   top:15px;
+   right:29px;
+   font-size:12px;
+   color:#23273f;
+}
+ 
+/* This is the sentence written over the toggle which says Day/Night Mode. 
+Its location is on the top right corner.
+The letters are light. 
+DARK MODE */
+body.night .daynightmode
+{
+    color:#e6e4e4;
+}
+/*This is the class for the 'pointer' shape for the day/night toggle.
+Location :right corner of the window; 40px from the top and 50px from the right
+Backgrond colour of the 'toggle' = light grey
+Border colour = darker grey
+Width of the toggle 55px
+Height of the toggle 20px
+The cursor gives the shape for the object = pointer
+Border radius = the highest the more round the shape will be
+Transition time = how long will it take to switch between dark mode and day mode */
+ 
+.toggle 
+{
+    position: absolute;
+    top: 40px;
+    right:50px;
+    background:#e6e4e4;
+    border: 3px solid #23273f;
+    width:55px;
+    height: 20px;
+    cursor: pointer;
+    border-radius: 30px;
+    transition: 0.4s;
+}
+ 
+/* This is the colour of the toggle  when the dark mode is switched on */
+.toggle.switched
+{
+    background: #23273f;
+    border: 3px solid #e6e4e4 ;
+}
+ 
+/* This is the object for the round shape inside the toggle.
+Set content to none as this is either a string or a number
+The object is 1.5px from the top of the .toggle
+And 2px from the left .toggle
+Width and Height of the circle : 17px
+background : the dark grey from before 
+The border radius makes the object rounder if the px number is higher
+:before will insert the selected object before the previous object*/
+.toggle:before 
+{
+    content: '';
+    position: absolute;
+    top: 1.5px;
+    left: 2px;
+    width: 17px;
+    height:17px;
+    background: #23273f;
+    border-radius: 50%;
+    transition: 0.4s;
+ 
+}
+ 
+/* This is the colour of the circle when the dark mode is switched on. Meaning the colour of the circle and toggle will be lighter */
+.toggle.switched::before
+{
+    left: 35px;
+    background: #e6e4e4
+}
+ 
+ 
+/* WHAT IS GOING TO FOLLOW IS THE GENERAL APPEARANCE OF THE WEBSITE (search bar; font; headers, paragraphs etc */
+ 
+/* This is the top bloc rectangle appearance for DAY MODE */
+.header {
+    padding: 30px;
+    text-align: center;
+    background: #969595;
+}
+ 
+        /* This is the top bloc rectangle appearance for DARK MODE */
+        body.night .header {
+            padding: 30px;
+            text-align: center;
+            background: #434b77;
+        }
+    
+/* This is the text 'Search ISBN number' for DAY MODE */
+.h1 {
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    color: #23273f;
+    font-size: 50px;
+}
+ 
+        /* This is the text 'Search ISBN number' for DARK MODE */
+        body.night .h1 {
+            font-family: Verdana, Geneva, Tahoma, sans-serif;
+            color: #e6e4e4;
+            font-size: 50px;
+        }
+ 
+/* This is the second biggest rectangle under the search bar for DAY MODE */    
+.main {
+    padding: 20px;
+    margin-top: 20px;
+    text-align: left;
+    background:  #666666;
+}
+ 
+        /* This is the second biggest rectangle under the search bar for DARK MODE */ 
+        body.night .main {
+            padding: 20px;
+            margin-top: 20px;
+            text-align: left;
+            background: #5d67a3;
+        }
+    
+ /* This is the text 'search' inside the search bar */ 
+.search {
+    font-size: 20px;
+}
+ 
+/* This is the smaller rectangle inside the two others under the search bar for DARK MODE */  
+.selection {
+    padding: 20px;
+    margin-top: 20px;
+    text-align: left;
+    background: #e6e4e4;
+}
+ 
+ 
+        /* This is the smaller rectangle inside the two others under the search bar for DARK MODE */
+        body.night .selection {
+            padding: 20px;
+            margin-top: 20px;
+            text-align: left;
+            background: #23273f;
+        }

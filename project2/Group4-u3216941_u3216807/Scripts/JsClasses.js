@@ -1,9 +1,7 @@
-
+//The class recive the book cover from the open libary using the isbn number that has been given
 class bookCover {
-
-    /* this class returns the bookcover for an isbn number in correct html using the openlibrary api*/
-
-    constructor(isbn, size = 'S', key = 'isbn') {
+    //contrastor seting the isbn number, the size of cover
+   constructor(isbn, size = 'S', key = 'isbn') {
         this.isbn = isbn;
         this.size = '-' + size;
         this.key = key + "/";
@@ -25,11 +23,10 @@ class bookCover {
 
 }
 
-
+//The class return the information of the book source from the open libary
 class bookDetail {
 
-    /* this class returns the book details for an isbn number in correct html using the openlibrary api*/
-
+  
     constructor(isbn, size = 'S', key = 'isbn') {
         this.isbn = isbn;
         this.key = key.toUpperCase() + ":";
@@ -48,14 +45,17 @@ class bookDetail {
     cover() {
         return this.bc.display();
     }
-    
+    //getdetail, combining all the different parts of the url and adding the isbn number that was picked
     async getDetail() {
 
         let dets = await getBookDetail(this.url_a, this.key, this.isbn, this.url_b);
         this.detail = dets[this.key + this.isbn];
 
     }
+//This section is for all catgory of infmation that is get recive for the html and inclueding the 
+//html tags
    gettitle(){
+       //the if and else statement is checking if the bookinfo contains it, if it doesn't contain it  return nothing
     if (!this.detail['title'])
     return "";
   else{
@@ -93,11 +93,13 @@ class bookDetail {
   }
     }
     getsubject(){
+        
         if(!this.detail['subjects'])
         return "";
   else{
         return "<p><br><b>Subject: </b><br>"+ this.detail['subjects'][0]['name'] +"</p>"+ "<br>";
-        }
+        
+    }
     }
 
     getpages(){

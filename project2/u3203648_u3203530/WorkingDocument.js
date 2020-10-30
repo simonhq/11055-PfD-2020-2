@@ -13,7 +13,7 @@ async function main() {
         bookarr.push(book);
     }
 //header details including title and images and colours
-    document.write('<h1 style="padding:10px;background-color:white;font-family:americantypewriter;border:2px solid blue;">'
+    document.write('<h1 style="padding:10px;background-color:white;font-family:americantypewriter;border:2px solid #FDD578;">'
     +'&nbsp; <img src="https://i.imgur.com/DfCAmeC.jpg" alt="bookHeader" style="width:200px;">'
     +'<img src="https://i.imgur.com/DfCAmeC.jpg" alt="bookHeader" style="width:200px;">'
     +'<img src="https://i.imgur.com/DfCAmeC.jpg" alt="bookHeader" style="width:200px;">'
@@ -22,17 +22,17 @@ async function main() {
     +'<img src="https://i.imgur.com/DfCAmeC.jpg" alt="bookHeader" style="width:200px;">'
     +'<img src="https://i.imgur.com/DfCAmeC.jpg" alt="bookHeader" style="width:200px;">'
     +'</h1>'
-    + '<body style="background-color:grey;">'
+    + '<body style="background-color:#92908A    ;">'
     //set style parameters for the left side of the page
     +'<style>'
     + 'div {width:20%; margin-left:40px; margin-right:40px; margin-top:80px; margin-bottom: 100px;'
-    +'width:360px; height:300px;padding:50px;border-radius:50px;border:20px solid black;background-color:lightgrey;}'
+    +'width:360px; height:300px;padding:50px;border-radius:50px;border:20px solid black;background-color:#EDE6D7;}'
     +'</style>'
     )
     
     for (x of bookarr) {
 //right side of page
-        document.write('<div style= "float:right; width:40%; height: 20%; margin-top:100px; margin-bottom:1px; margin-left:40px"; margin-right: 40px; padding: 40px;>'
+        document.write('<div style= "float:right; width:30%; height: 20%; margin-top:100px; margin-bottom:1px; margin-left:40px"; margin-right: 40px; padding: 40px;>'
         + 'Published' + " "
         + x.getPublishDate() + " "
         +'By' + " "
@@ -50,8 +50,8 @@ async function main() {
         );
         //text
         document.write('<h2>' + x.getTitle() + '</h2>' + '<br></br>');
-        document.write('<p style="background-color:lightgrey; font-family:americantypewriter;"</p>' + '<br></br>');
-        document.write( x.getAuthor() + '<br></br>');
+        document.write('<p style="background-color #EDE6D7; font-family:arial;"</p>' + '<br></br>');
+        document.write( "Written By" + " " + x.getAuthor() + '<br></br>');
         document.write('</div>');  
     }
 }

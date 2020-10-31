@@ -1,0 +1,38 @@
+BEGIN ISBN SEARCH
+RECIEVE ISBN numbers
+LOAD VARIABLES
+CREATE Book class
+CREATE Move class
+GENERATE API TOKEN
+FETCH REQUEST to ISBN API
+AWAIT for data
+CREATE ARRAY of Book class
+Store FETCH REQUEST IN ARRAY
+GENERATE CANVAS
+I = 0;
+While I < Book Array.length:
+    Create Button at x and y pos
+    button image = BookCover from API
+    INCREMENT X, Y and IN
+END LOOP
+WHILE PROGRAM OPEN:
+    MOUSECLICK EVENT:
+            FIND mouseX postion
+            FIND mouseY position
+            IF mouseX and MouseY within Button:
+                SET Currentbook to Book clicked
+                LOCATE data from BookClass Array
+                DISPLAY BOOK data
+                CREATE Button 'Find Movie'
+            ENDIF
+        END MOUSE CLICK EVENT
+    'Find Movie' BUTTON CLICK EVENT:
+        GENERATE API TOKKEN FROM ISBN TITLE
+        FETCH REQUEST from movie API
+        STORE REQUEST data in movie class
+        DISPLAY Movie class data
+    END 'Find Movie' BUTTON CLICK EVENT;
+ LOOP;
+END PROGRAM
+
+    

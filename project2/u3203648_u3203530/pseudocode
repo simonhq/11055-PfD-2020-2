@@ -1,0 +1,68 @@
+Start
+In HTML document 
+Create link to p5.js library
+Create link to set up document
+Create link to working document 
+
+In Setup document 
+
+Create class for Book Cover
+Define variable for isbn
+Define variable beginning of book cover link 
+Define variable for key 
+Define variable for size
+Define varibale for end of book cover link 
+
+Create the Cover link from the variables 
+
+Create class for Book Detail 
+Define variable for isbn
+Define variable beginning of book cover link 
+Define variable for key 
+Associate variables with corresponding book cover values 
+Define vaiable for end of Book Detail link 
+
+Create the Detail link from the variables 
+
+Create key for Title 
+Create key for author 
+Create key for Page Numbers
+Create key for Publish Date 
+Create key for Publishers
+Create key fo Book Subject 
+Create key for Subject URL 
+
+Create Async function for errors 
+
+In Working Document 
+
+Create async function for writing book information 
+Create array for book isbn
+
+Create header for document 
+Set style details for header (background colour, font type, box border)
+Link images for left side of header
+Write Title 
+Link images for right side of header
+
+Set background colour for webpage 
+
+Set style details for information boxes (width, padding, border size, border colour, background colour)
+
+Create loop for details of each book 
+
+Set additional style details for right information boxes (width, padding, position)
+Write Publish Date 
+Write Publishers 
+Write Page Number
+Write Book Subject 
+Write Book Subject URL
+End style details for right
+Write Cover 
+Set cover style details (position, padding)
+Write Title 
+Set style details for author (background colour, font)
+Write Author 
+
+End
+

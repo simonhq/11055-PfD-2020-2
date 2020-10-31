@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+
+<!--
+This is a HTML page which will use javascript to bring up information on books using ISBNs.
+Author: Zanya Nadelle Bendebel & Claire McAuliffe
+Date Created: 14/10/2020
+-->
+
+<!-- Individual book site -->
+
+<html>
+    <head>
+        <title id="bookListTitle">Book List</title>
+        <link rel="stylesheet" type="text/css" href="style.css">
+        <script src = "../isbn.js"></script>
+        <script src = "Project_2.js"></script>
+    </head>
+    <body>
+        <div class="box-area">
+            <header>
+                <!-- This is the navigation bar -->
+                <div class="wrapper">
+                    <div class="logo">
+                        <!-- Put logo of website here -->
+                        <a href="#">Book List</a> 
+                    </div>
+                    <nav>
+                        <a href="#">Home</a>
+                        <a href="./about.html#">About</a>
+                        <!-- <a href="./bookList.html">Book List</a> -->
+                    </nav>
+                </div> 
+            </header>
+            <div class="banner-area">
+                <h2>Book List</h2>
+            </div>
+            <div class="content-area body">
+                <div class="wrapper">
+                    <div class="bookTitle">
+                    </div>
+
+                    <div class="bookCover">
+                    </div>     
+            
+                    <div class="bookAuthor">
+                    </div>
+            
+                    <div class="bookPublisher">
+                    </div>
+            
+                    <div class="bookPublishDate">
+                    </div>    
+                    
+                    <div class="movie">
+                    </div>
+
+                    <div class="movieTitle">
+                    </div>
+
+                    <div class="movieCover">
+                    </div>     
+            
+                    <div class="movieRating">
+                    </div>
+
+                    <button id="nextButton" class="nextButton" style ="display:none">
+                        Next Book
+                    </button>
+                                        
+                    <button id="deleteButton" class="deleteButton" style ="display:none">
+                        Delete
+                    </button>
+                    
+                    <button id="backButton" class="backButton" style ="display:none">
+                        Previous Book
+                    </button>
+                    
+                    <button id="homeButton" class="homeButton" style ="display:none">
+                        Home
+                    </button>
+            </div>
+        </div>
+    </body>
+</html> 

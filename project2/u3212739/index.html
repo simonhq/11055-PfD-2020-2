@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+
+<!--
+This is a HTML page which will use javascript to bring up information on books using ISBNs.
+Author: Zanya Nadelle Bendebel & Claire McAuliffe
+Date Created: 14/10/2020
+-->
+
+<!-- Individual book site -->
+
+<html>
+    <head>
+        <title>Book List</title>
+        <link rel="stylesheet" type="text/css" href="style.css">
+        <script src = "../isbn.js"></script>
+        <script src = "Project_2.js"></script>
+    </head>
+    <body>
+        <div class="box-area">
+            <header>
+                <!-- This is the navigation bar -->
+                <div class="wrapper">
+                    <div class="logo">
+                        <!-- Put logo of website here -->
+                        <a href="#">Book List</a> 
+                    </div>
+                    <nav>
+                        <a href="./index.html">Home</a>
+                        <a href="./about.html">About</a>
+                        <a href="./bookList.html">Book List</a>
+                    </nav>
+                </div> 
+            </header>
+			<div class="banner-area">
+				<h2>Add a Book to the List</h2>
+			</div>
+			<div class="content-area body">
+                <form>
+                    <label for="addISBN"><br/><br/>Enter the ISBN number of the book you want to add to your Book List.</label><br/><br/>
+                    <input type="number" id="addISBN" maxlength="13" name="addISBN">
+                </form>
+			</div>
+        </div>
+    </body>
+</html> 

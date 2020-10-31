@@ -1,0 +1,40 @@
+/* Programming for Design group Project 2 */
+
+/* Group Members Moudar and Johannes */
+
+/* 29th of October 2020 */
+
+/* body styling */ 
+
+body {
+  background-color: #222;
+  /* Full height */
+  height: 100%;
+}
+
+/* center class styling */ 
+.center {
+  margin: auto;
+  margin-top: 100px;
+}
+
+/* header styling */ 
+#header {
+  font-family: 'Righteous', sans-serif;
+  font-size: 3rem;
+  color: white;
+}
+
+/* h2 styling */ 
+h2 {
+  font-family: 'Righteous', sans-serif;
+  color: #38AECC;
+}
+
+/* flex container */ 
+.flex-container {
+  display: flex;
+  justify-content: center;
+  
+}
+

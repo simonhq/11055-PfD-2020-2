@@ -1,0 +1,9 @@
+Reflection:
+The goal of the project was to be able to search for book using ISBN number and our result for the project
+ was able to achieve this goal and I have learnt a lot of new things from the project. At the start of the 
+ project me and my group panther figure out who was going to do what. We decide that I would do the flowchart
+  and they would do the pseudocode. For the programming and html side of the project we decide we would both 
+  do even amount of work for that section. Overall, I believe as group we worked quite well together and were
+   able to finish with a good final product that tick the boxes of what we need to do.  In the project, 
+   I learnt more about classes and how there worked and the uses of arrays. This project has expanded my Programming 
+   knowledge and learning how to work in a team for a programming environment. 

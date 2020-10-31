@@ -3,34 +3,78 @@
     <head>
         
     <style>
+        /*
+        CSS source from w3school with few changes 
+        */
         .header {
+             /*Creating the heading with background colour*/
             overflow: hidden;
             background-color: #ebffb0;
             padding: 20px 10px;
         }
-            div.a {
-                text-indent: 50px;
-                }
+         .middle{
+              /*Setting object to be in the middle of page*/
+            margin:0 auto;
+            width:250px;          
+       
+         }   
+        
+        #coverimg{ /*Book info and coverimg div centering infomation to the center*/
+            
+        text-align: center;
+        }
+        #bookinfo{
+            text-align: center;
+        }
+      h3{
+        margin-bottom: -20px;
+      }
+      .detail {
+           color:green;
+           font-weight:bold;
+           font-family:Times New Roman;
+           font-size:20 
            
+           
+           }
+           h2{
+               text-align: center;
+           }
+   
         
     </style>
-    <script src="Scripts/"></script>        
-    <script src="Scripts/Search.js"></script>
+  <!--Getting the script connect to javascript-->
+    <script src="Scripts/Mainscript.js"></script>
+    <script src="Scripts/JsClasses.js"></script>   
     </head>
-    <body>
-        <script src="Scripts/Mainscript.js"></script>
+    <body onload="init()"> <!--Onload the init fuction will be called-->
         
-
         <div class = "header">
-            <h1>Project 2</h1>
+            <img src="Uclogo.png" width="7%"style="float:left">
+             <!--Uc logo sources from Creativecommons website, 
+        "File:UC Logo Stacked Colour DIGITAL.png" by ReneeRyanUniCanberra is licensed under CC BY-SA 4.0-->
+            <h1 style="margin-left: 150px;">Project 2: <br>Libary Book Search</h1> 
+            <p>Created by Group 4 which incluedes,<br> Seth Arnould and Taylor Campbell </p>
         </div>
-        <button type ="button" id="button1" onclick="main();">Display books</button>
+        <div class="middle">   
+            <!--class detail seting the font and colour--> 
+            <h2 class="detail">Book Search by ISBN</h2>
+            <!--Create a textbox that is able be connect to javascript with the id-->
+        <input type="text" name="searchbar" id="searchbar"  placeholder="Search for Isbn" height="100" />               
+        <button type="button" id="searchbutton"  onclick="search()">Search</button>
         
-        <input type="text" name="searchbar" id="searchbar" placeholder="Search for Isbn"/>
-        <button type="button" id="searchbutton"  onclick="addisbn()">Search</button>
-        
-        <p id="bookinfo" name="bookinfo">Bookinfo</p>
-        
-        <div id="bookinfo"></div>
+        <!--Dropdown menu for the pervious searched option-->
+<label for="selcetarr">Pervious Serach Books:</label>
+<select id="selcetarr">
+          </select>
+        </div>
+          <!--These two div are for the book infomation and cover to be loaded in-->
+        <div id="coverimg">
+
+        </div>
+
+        <div id="bookinfo">
+            
+        </div>
     </body>
 </html>
